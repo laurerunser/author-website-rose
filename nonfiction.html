@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>About — Rose Bertrand</title>
+  <title>Non-fiction — Rose Bertrand</title>
 
   <link rel="icon" href="images/original_portrait_background.png">
 
@@ -27,8 +27,8 @@
   <link rel="stylesheet" href="css/0_top/stamp.css?v=2">
 
   <!-- middle -->
-  <link rel="stylesheet" href="css/1_middle/cards.css?v=3">
-  <link rel="stylesheet" href="css/about.css?v=2">
+  <link rel="stylesheet" href="css/1_middle/cards.css?v=2">
+  <link rel="stylesheet" href="css/nonfiction.css?v=1">
 
   <!-- bottom -->
   <link rel="stylesheet" href="css/2_bottom/socials.css?v=2">
@@ -43,11 +43,11 @@
 </head>
 
 
-<body data-theme="green">
+<body data-theme="sepia">
     <main class="page">
 
   <aside class="rail rail--left" aria-hidden="true">
-    <img src="components/about/desk-left.svg?v=2" alt="">
+    <img src="components/nonfiction/mushrooms.svg?v=1" alt="">
   </aside>
 
   <section class="center">
@@ -66,24 +66,29 @@
           Science-fiction &amp; fantasy author
         </div>
         <p class="blurb">
-          A few notes on me — and the work.
+          Essays, reviews, and the occasional rant — the non-fiction shelf.
         </p>
       </div>
 
       <nav class="moving-bug" id="moving-bug" aria-label="Pages">
-        <a class="loop-link loop-link--about is-current" href="about.html">about me</a>
+        <a class="loop-link loop-link--about" href="about.html">about me</a>
         <span class="loop-sep loop-sep--1" aria-hidden="true">*</span>
         <a class="loop-link loop-link--stories" href="index.html">stories</a>
         <span class="loop-sep loop-sep--2" aria-hidden="true">*</span>
-        <a class="loop-link loop-link--nonfic" href="nonfiction.html">nonfiction</a>
+        <a class="loop-link loop-link--nonfic is-current" href="nonfiction.html">nonfiction</a>
       </nav>
 
       <div class="portrait-wrap">
         <div class="portrait">
           <img
-            class="portrait-img"
+            class="portrait-img portrait-light"
             src="images/original_portrait_background.png"
             alt="Portrait of Rose Bertrand">
+          <img
+            class="portrait-img portrait-dark"
+            src="images/portraits/02_light_green.png"
+            alt=""
+            aria-hidden="true">
         </div>
 
         <svg
@@ -113,30 +118,31 @@
 
     </header>
 
-    <section class="letters" aria-label="About">
+    <div class="catalog">
 
-      <article class="letter letter--bio">
-        <span class="clip" aria-hidden="true"></span>
-        <h3>Dear reader,</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat duis aute irure dolor.</p>
-        <p class="sign">— Rose</p>
-      </article>
+      <div
+        class="tabs"
+        id="tabs"
+        role="tablist">
+      </div>
 
-      <article class="letter letter--work">
-        <span class="clip" aria-hidden="true"></span>
-        <h3>On writing —</h3>
-        <p>Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam eaque ipsa quae.</p>
-        <p>Neque porro quisquam est qui dolorem ipsum quia dolor sit amet, consectetur, adipisci velit sed quia non numquam eius modi.</p>
-      </article>
+      <div
+        class="body"
+        id="body">
 
-      <article class="letter letter--ai">
-        <span class="clip" aria-hidden="true"></span>
-        <h3>On AI usage —</h3>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua, quis nostrud exercitation ullamco laboris nisi.</p>
-      </article>
+        <span
+          class="hole"
+          aria-hidden="true">
+        </span>
 
-    </section>
+        <div
+          class="story"
+          id="story">
+        </div>
+
+      </div>
+
+    </div>
 
     <footer class="socials">
 
@@ -181,11 +187,12 @@
   </section>
 
   <aside class="rail rail--right" aria-hidden="true">
-    <img src="components/about/desk-right.svg?v=1" alt="">
+    <img src="components/nonfiction/solar.svg?v=1" alt="">
   </aside>
 
 </main>
 
+<script src="js/nonfiction.js?v=1"></script>
 <script src="js/moving_bug.js?v=7"></script>
 </body>
 

@@ -26,6 +26,7 @@
 [data-theme="yellow"] .rail{background:var(--rail-yellow); border-color:var(--rail-yellow); outline-color:rgba(232,196,92,.30);}
 [data-theme="red"]    .rail{background:var(--rail-red);    border-color:var(--rail-red);    outline-color:rgba(232,118,94,.30);}
 [data-theme="purple"] .rail{background:var(--rail-purple); border-color:var(--rail-purple); outline-color:rgba(185,143,217,.30);}
+[data-theme="sepia"]  .rail{background:var(--rail-sepia);  border-color:var(--rail-sepia);  outline-color:rgba(176,137,90,.30);}
 
 .rail--right{margin-left:0;}
 .rail--left{margin-right:0;}

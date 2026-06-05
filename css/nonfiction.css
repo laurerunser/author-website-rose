@@ -1,0 +1,6 @@
+/* nonfiction.css — non-fiction page extras.
+   Tab numbers alternate green / brown (the green is reused from cards.css;
+   the brown is set here). The card margin-rule + read-more stay red because
+   the page theme ("sepia") isn't one of the per-tab accents. */
+
+.tab--brown .num{color:var(--brown);}
