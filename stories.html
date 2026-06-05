@@ -19,15 +19,17 @@
 
   <!-- foundation -->
   <link rel="stylesheet" href="css/variables.css?v=3">
-  <link rel="stylesheet" href="css/layout.css?v=3">
+  <link rel="stylesheet" href="css/layout.css?v=4">
   <link rel="stylesheet" href="css/sidebars.css?v=3">
 
   <!-- top -->
   <link rel="stylesheet" href="css/0_top/portrait.css?v=5">
   <link rel="stylesheet" href="css/0_top/stamp.css?v=2">
 
-  <!-- middle -->
+  <!-- middle (all page views loaded — this is a single-page site) -->
   <link rel="stylesheet" href="css/1_middle/cards.css?v=3">
+  <link rel="stylesheet" href="css/about.css?v=5">
+  <link rel="stylesheet" href="css/nonfiction.css?v=4">
 
   <!-- bottom -->
   <link rel="stylesheet" href="css/2_bottom/socials.css?v=3">
@@ -43,45 +45,47 @@
 
 
 <body
+  data-theme="blue"
   data-page="stories"
   data-blurb="A shelf of short fiction and works in progress — pick a tab below to start reading."
   data-portrait-light="images/portraits/01_light_blue.webp"
-  data-portrait-dark="images/portraits/01_dark_blue.webp"
-  data-scripts="js/stories.js?v=7,js/easter-eggs.js?v=1,js/moving_bug.js?v=10">
+  data-portrait-dark="images/portraits/01_dark_blue.webp">
     <main class="page">
 
   <aside class="rail rail--left" aria-hidden="true">
-    <img id="rail-left" src="components/01_blue/spaceship.svg?v=2" alt="">
+    <img id="rail-left" class="rail-img" src="components/01_blue/spaceship.svg?v=2" alt="">
   </aside>
 
   <section class="center">
 
     <div id="site-header"></div>
 
-    <div class="catalog">
-
-      <div
-        class="tabs"
-        id="tabs"
-        role="tablist">
-      </div>
-
-      <div
-        class="body"
-        id="body">
-
-        <span
-          class="hole"
-          aria-hidden="true">
-        </span>
+    <div id="view">
+      <div class="catalog">
 
         <div
-          class="story"
-          id="story">
+          class="tabs"
+          id="tabs"
+          role="tablist">
+        </div>
+
+        <div
+          class="body"
+          id="body">
+
+          <span
+            class="hole"
+            aria-hidden="true">
+          </span>
+
+          <div
+            class="story"
+            id="story">
+          </div>
+
         </div>
 
       </div>
-
     </div>
 
     <div id="site-footer"></div>
@@ -89,12 +93,12 @@
   </section>
 
   <aside class="rail rail--right" aria-hidden="true">
-    <img id="rail-right" src="components/01_blue/starchart.svg?v=2" alt="">
+    <img id="rail-right" class="rail-img" src="components/01_blue/starchart.svg?v=2" alt="">
   </aside>
 
 </main>
 
-<script src="js/include.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
 </body>
 
 </html>
