@@ -75,6 +75,7 @@
     if (bug.dataset.theme === theme) return;
     bug.innerHTML = ICONS[theme] || ICONS.blue;
     bug.dataset.theme = theme;
+    applyFacing(theme);
   }
 
   function bounds() {
@@ -86,14 +87,42 @@
     };
   }
 
-  var x = 0, y = 0;
+  // how each icon faces its heading. 'rotate' spins to the direction of
+  // travel (top-down craft); 'flip' only mirrors left/right so side-on
+  // critters never go belly-up; 'none' leaves it alone (the round blob just
+  // wobbles). base = the angle the art is drawn pointing, in degrees.
+  var FACING = {
+    blue:   { mode: "rotate", base: -90 }, // spaceship — nose up
+    green:  { mode: "flip" },              // millipede — head to the right
+    yellow: { mode: "flip" },              // desert mouse — snout to the right
+    red:    { mode: "rotate", base: -90 }, // firebug — head up
+    purple: { mode: "none" }               // blob
+  };
 
-  function moveTo(px, py, durMs, rot) {
+  var x = 0, y = 0;
+  var lastDx = 0, lastDy = -1; // start pointing the way the art is drawn
+
+  // turn the icon to face where it's going (applied to the inner svg so it
+  // composes with the slow drift translate on .bug)
+  function applyFacing(theme) {
+    var svg = bug.firstElementChild;
+    if (!svg) return;
+    var f = FACING[theme] || FACING.blue;
+    if (f.mode === "rotate") {
+      var ang = Math.atan2(lastDy, lastDx) * 180 / Math.PI;
+      svg.style.transform = "rotate(" + (ang - f.base).toFixed(1) + "deg)";
+    } else if (f.mode === "flip") {
+      svg.style.transform = "scaleX(" + (lastDx < 0 ? -1 : 1) + ")";
+    } else {
+      svg.style.transform = "";
+    }
+  }
+
+  function moveTo(px, py, durMs) {
     x = px;
     y = py;
     bug.style.transitionDuration = (durMs / 1000) + "s";
-    bug.style.transform =
-      "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px) rotate(" + rot + "deg)";
+    bug.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
   }
 
   // pick a new gentle, slow waypoint and return how long until the next hop
@@ -101,9 +130,11 @@
     var b = bounds();
     var nx = Math.random() * b.maxX;
     var ny = Math.random() * b.maxY;
-    var rot = (Math.random() * 16 - 8).toFixed(1);
+    lastDx = nx - x;
+    lastDy = ny - y;
+    applyFacing(bug.dataset.theme);
     var dur = 3500 + Math.random() * 3500; // 3.5–7s per glide
-    moveTo(nx, ny, dur, rot);
+    moveTo(nx, ny, dur);
     return dur + 500 + Math.random() * 1500; // pause a beat, then glide again
   }
 

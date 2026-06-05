@@ -28,6 +28,8 @@
   width:100%;
   height:100%;
   overflow:visible;
+  transform-origin:50% 50%;
+  transition:transform .55s ease; /* smooth turn toward the heading */
 }
 
 /* the purple blob wobbles like liquid while it drifts */
@@ -45,5 +47,6 @@
 
 @media (prefers-reduced-motion:reduce){
   .moving-bug .bug{transition:none;}
+  .moving-bug .bug svg{transition:none;}
   .moving-bug .bug[data-theme="purple"] svg{animation:none;}
 }
