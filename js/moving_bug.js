@@ -20,7 +20,7 @@
     yellow: blob('rgba(169,121,26,.42)', '#a9791a'),
     red:    blob('rgba(196,59,39,.42)',  '#c43b27'),
     purple: blob('rgba(122,79,163,.42)', '#7a4fa3'),
-    sepia:  blob('rgba(224,106,90,.45)', '#e0705a')    // light red (non-fiction)
+    sepia:  blob('rgba(231,213,139,.5)', '#ddc77b')    // light dress yellow (non-fiction)
   };
 
   var host = document.getElementById("moving-bug");

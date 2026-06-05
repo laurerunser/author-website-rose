@@ -1,6 +1,6 @@
-<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+<svg viewBox="0 0 90 850" xmlns="http://www.w3.org/2000/svg">
   <!-- lighter-green backdrop -->
-  <rect width="90" height="820" fill="#3c7d50"/>
+  <rect width="90" height="820" fill="#607848"/>
 
   <!-- faint blueprint grid -->
   <g stroke="#f4ecd9" stroke-width="0.6" opacity="0.16" stroke-dasharray="1.5 6">
@@ -25,7 +25,7 @@
     <path d="M24 178 L45 168 L66 178 L66 190 L45 180 L24 190 Z"/>
   </g>
   <!-- thigh bolts -->
-  <g fill="#3c7d50" stroke="#6b4a2f" stroke-width="1.4">
+  <g fill="#607848" stroke="#6b4a2f" stroke-width="1.4">
     <circle cx="27" cy="22" r="3"/><circle cx="63" cy="22" r="3"/>
     <circle cx="27" cy="286" r="3"/><circle cx="63" cy="286" r="3"/>
   </g>
@@ -73,11 +73,11 @@
     <line x1="45" y1="746" x2="45" y2="792"/>
     <line x1="60" y1="742" x2="60" y2="792"/>
   </g>
-  <g fill="#3c7d50" stroke="#6b4a2f" stroke-width="1.4">
+  <g fill="#607848" stroke="#6b4a2f" stroke-width="1.4">
     <circle cx="18" cy="720" r="3"/><circle cx="72" cy="720" r="3"/>
   </g>
 
   <!-- annotations -->
   <text x="84" y="120" fill="#f4ecd9" opacity="0.85" font-family="monospace" font-size="8" transform="rotate(-90 84 120)">FIG. — COLOSSUS</text>
-  <text x="10" y="816" fill="#f4ecd9" opacity="0.85" font-family="monospace" font-size="7.5">LEFT LEG · IX</text>
+  <text x="10" y="838" fill="#f4ecd9" opacity="0.85" font-family="monospace" font-size="7.5">LEFT LEG · IX</text>
 </svg>
