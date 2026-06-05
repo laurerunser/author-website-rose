@@ -6,3 +6,79 @@
     .catalog{flex:1 1 auto;}
     .body{flex:1 1 auto; overflow:hidden;}
   }
+
+  /* ---------------------------------------------------------------------------
+     PHONES / NARROW SCREENS (≤ 760px)
+
+     The desktop layout is a single horizontal flex row: rail · center · rail.
+     Squeezed onto a phone, the two rails eat the sides and crush the reading
+     column to a one-word-per-line ribbon, and the header (stamp · name · nav ·
+     portrait, all side by side) collapses on top of itself.
+
+     Here we: keep the page scrolling naturally, slim the rails into thin themed
+     side-spines, re-stack the header into a centered column with the moving-bug
+     nav on its own full-width row, and widen the reading column.
+  --------------------------------------------------------------------------- */
+  @media (max-width:760px){
+
+    /* never let a stray wide element cause sideways scroll */
+    body{overflow-x:hidden;}
+
+    .page{min-height:100vh; align-items:stretch;}   /* rails run the full scroll height */
+
+    .center{padding:16px 10px 14px; gap:14px;}
+
+    /* --- thin themed side-spines -------------------------------------------
+       keep the rails on the sides (their art is tall/portrait-oriented) but
+       reduce them to slim strips: the theme colour reads as a coloured spine
+       with a sliver of the SVG art centred in it. They scroll with the page. */
+    .rail{flex:0 0 30px; margin:0 4px; outline-offset:-5px; border-width:2px;}
+    .rail--left{margin-right:4px;}
+    .rail--right{margin-left:4px;}
+    .rail img{inset:4px; width:calc(100% - 8px); height:calc(100% - 8px);}
+
+    /* --- header re-stacked as a centered column ---------------------------- */
+    .head{
+      flex-direction:column; align-items:center; text-align:center;
+      gap:14px; justify-content:flex-start;
+    }
+    .stamp{order:1; align-self:flex-start; margin-top:0;}
+    .intro{order:2; align-items:center; text-align:center; width:100%;}
+    .portrait-wrap{order:3;}
+    .moving-bug{order:4;}
+
+    /* shrink the title so it never overflows / hides behind anything */
+    .name{font-size:clamp(32px,8.5vw,44px); line-height:.95;}
+    .tagline{margin-top:8px;}
+    .blurb{font-size:clamp(14px,4vw,16.5px); margin-top:10px; max-width:38ch;}
+
+    .portrait{width:clamp(132px,38vw,168px);}
+
+    /* the moving-bug nav gets its own full-width band so the blob has room to
+       weave and the absolutely-positioned links (at 16/50/84%) sit cleanly */
+    .moving-bug{
+      width:100%; min-width:0; align-self:stretch;
+      height:52px; margin-top:2px;
+    }
+
+    /* --- stories: numbered tab chips --------------------------------------
+       at phone width 5 tabs sharing the row leaves no room for labels (they
+       ellipsis to nothing), so show clean centred numbers; the active story's
+       title already sits as the <h2> in the body below. */
+    .tabs{gap:5px; padding-left:0;}
+    .tab{justify-content:center; padding:8px 4px 11px; font-size:13px;}
+    .tab .lbl{display:none;}
+
+    /* tighten the ledger body so the text column isn't crowded by the rule */
+    .body{padding:14px 16px 14px 42px;}
+    .body::before{left:32px;}
+    .hole{left:12px;}
+
+    /* --- about: letters stack one per row (already flex-wrap, nudge basis) -- */
+    .letters{gap:18px; padding:6px 2px;}
+    .letter{flex-basis:100%;}
+
+    /* --- footer socials wrap a little tighter ------------------------------ */
+    .socials{gap:10px 16px;}
+    .site-credit{margin-left:0; text-align:left; width:100%;}
+  }
