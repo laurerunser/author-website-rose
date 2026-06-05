@@ -1,69 +1,79 @@
 <svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- ground + faint grid -->
+  <!-- faint grid -->
   <g stroke="#e8765e" stroke-width="0.6" opacity="0.4" stroke-dasharray="1.5 5">
-    <line x1="45" y1="340" x2="45" y2="740"/>
-    <line x1="6" y1="430" x2="84" y2="430"/>
-    <line x1="6" y1="600" x2="84" y2="600"/>
+    <line x1="45" y1="360" x2="45" y2="720"/>
+    <line x1="6" y1="500" x2="84" y2="500"/>
+    <line x1="6" y1="630" x2="84" y2="630"/>
   </g>
 
-  <!-- rising stem -->
-  <path d="M40 296
-           C 36 430 33 580 28 700
-           C 25 728 21 742 16 752
-           L74 752
-           C 69 742 65 728 62 700
-           C 57 580 54 430 50 296
-           C 48 306 42 306 40 296 Z"
-        fill="rgba(232,118,94,.12)"
+  <!-- thick rising column, flaring into a dust base -->
+  <path d="M33 300
+           C 32 392 30 504 28 600
+           C 25 668 20 716 14 756
+           L 76 756
+           C 70 716 65 668 62 600
+           C 60 504 58 392 57 300
+           C 52 308 38 308 33 300 Z"
+        fill="rgba(232,118,94,.13)"
         stroke="#f7dcd2" stroke-width="1.5"
         stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- cap: wide billowing umbrella head -->
-  <path d="M6 296
-           C 2 250 8 206 18 196
-           C 16 174 30 168 40 182
-           C 42 160 58 158 62 182
-           C 72 170 86 206 84 250
-           C 86 270 84 286 84 296
-           C 76 304 70 298 62 304
-           C 56 308 52 300 46 304
-           C 40 308 36 300 28 304
-           C 18 308 12 300 6 296 Z"
-        fill="rgba(232,118,94,.16)"
-        stroke="#f7dcd2" stroke-width="1.6"
+  <!-- a billowing collar where the column feeds the cap -->
+  <path d="M20 300 C 30 286 60 286 70 300 C 60 312 30 312 20 300 Z"
+        fill="rgba(232,118,94,.15)" stroke="#f7dcd2" stroke-width="1.2"/>
+
+  <!-- the cap: a broad, flat-topped atomic head that mushrooms out well past
+       the column and off both edges (we see the middle of a huge cloud) -->
+  <path d="M-12 286
+           C -12 232 8 196 30 192
+           C 34 166 56 164 60 190
+           C 82 196 102 232 102 286
+           C 96 300 86 300 78 296
+           C 66 306 54 298 45 304
+           C 36 298 24 306 12 296
+           C 4 300 -6 300 -12 286 Z"
+        fill="rgba(232,118,94,.17)"
+        stroke="#f7dcd2" stroke-width="1.7"
         stroke-linejoin="round"/>
 
-  <!-- cap billows (staggered convex-up swirls) -->
-  <g fill="none" stroke="#f7dcd2" stroke-width="0.8" opacity="0.65">
-    <path d="M14 248 q 7 -11 15 -3"/>
-    <path d="M34 256 q 8 -12 17 -2"/>
-    <path d="M58 246 q 7 -12 16 -3"/>
-    <path d="M24 214 q 9 -11 17 -1"/>
-    <path d="M50 200 q 8 -10 16 1"/>
-    <path d="M40 228 q 6 -9 13 -1"/>
+  <!-- rolling billow bands across the cap (read as cloud, not a face) -->
+  <g fill="none" stroke="#f7dcd2" stroke-width="0.8" opacity="0.6"
+     stroke-linecap="round">
+    <path d="M-6 268 q 13 -8 26 0 q 13 8 26 0 q 13 -8 26 0 q 10 6 18 2"/>
+    <path d="M2 238 q 12 -7 24 0 q 12 7 24 0 q 12 -7 22 0"/>
+    <path d="M14 212 q 10 -6 20 0 q 10 6 20 0"/>
   </g>
 
-  <!-- stem swirl -->
-  <g fill="none" stroke="#f7dcd2" stroke-width="0.7" opacity="0.55">
-    <path d="M38 420 C 49 432 49 452 39 470"/>
-    <path d="M51 540 C 40 556 40 580 51 598"/>
-    <path d="M36 622 C 49 638 49 666 37 688"/>
+  <!-- fireball glow at the heart of the cloud -->
+  <circle cx="45" cy="276" r="6" fill="rgba(232,118,94,.5)" stroke="none"/>
+
+  <!-- updraft striations in the column -->
+  <g fill="none" stroke="#f7dcd2" stroke-width="0.7" opacity="0.5">
+    <path d="M40 336 C 38 440 38 560 36 656"/>
+    <path d="M50 336 C 52 440 52 560 54 656"/>
+    <path d="M45 352 C 44 470 44 590 44 700"/>
   </g>
 
-  <!-- ground + shock ring -->
-  <line x1="6" y1="752" x2="84" y2="752"
+  <!-- ground line + a little city skyline being engulfed -->
+  <line x1="4" y1="758" x2="86" y2="758"
         stroke="#f7dcd2" stroke-width="1.2"
         stroke-dasharray="9 3 1.5 3"/>
+  <polyline points="6,758 6,744 13,744 13,750 19,750 19,736 26,736 26,748
+                    33,748 33,740 40,740 40,752 47,752 47,742 54,742 54,750
+                    61,750 61,738 68,738 68,748 75,748 75,744 84,744 84,758"
+            fill="none" stroke="#e8765e" stroke-width="1" opacity="0.85"/>
+
+  <!-- shock ring spreading from ground zero -->
   <g fill="none" stroke="#e8765e" stroke-width="0.9" opacity="0.7">
-    <path d="M6 760 C 20 748 30 748 40 758"/>
-    <path d="M84 760 C 70 748 60 748 50 758"/>
+    <path d="M4 768 C 22 756 32 756 45 764"/>
+    <path d="M86 768 C 68 756 58 756 45 764"/>
   </g>
 
   <!-- annotations -->
   <g fill="#e8765e" font-family="monospace">
-    <text x="84" y="150" font-size="8" transform="rotate(-90 84 150)">FIG. IV — FALLOUT</text>
-    <text x="74" y="560" font-size="7.5" transform="rotate(-90 74 560)">T + 09 s</text>
-    <text x="10" y="734" font-size="7.5">SITE R-04</text>
+    <text x="86" y="170" font-size="8" transform="rotate(-90 86 170)">FIG. IV — DETONATION</text>
+    <text x="74" y="620" font-size="7.5" transform="rotate(-90 74 620)">T + 09 s</text>
+    <text x="10" y="734" font-size="7.5">GROUND ZERO</text>
   </g>
 </svg>

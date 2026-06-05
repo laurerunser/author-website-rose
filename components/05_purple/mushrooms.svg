@@ -2,75 +2,76 @@
 
   <!-- faint plot grid -->
   <g stroke="#b98fd9" stroke-width="0.6" opacity="0.35" stroke-dasharray="1.5 5">
-    <line x1="45" y1="380" x2="45" y2="740"/>
-    <line x1="6" y1="500" x2="84" y2="500"/>
-    <line x1="6" y1="640" x2="84" y2="640"/>
+    <line x1="45" y1="560" x2="45" y2="744"/>
+    <line x1="6" y1="620" x2="84" y2="620"/>
+    <line x1="6" y1="700" x2="84" y2="700"/>
   </g>
 
-  <!-- floating spores -->
+  <!-- spores drifting up off the caps -->
   <g fill="#b98fd9">
-    <circle cx="30" cy="430" r="1.2"/>
-    <circle cx="58" cy="470" r="1.4"/>
-    <circle cx="40" cy="392" r="1"/>
-    <circle cx="68" cy="540" r="1.2"/>
-    <circle cx="20" cy="560" r="1.1"/>
+    <circle cx="40" cy="560" r="1.2"/>
+    <circle cx="58" cy="600" r="1.4"/>
+    <circle cx="34" cy="640" r="1"/>
+    <circle cx="66" cy="660" r="1.2"/>
+    <circle cx="48" cy="500" r="1"/>
+    <circle cx="26" cy="600" r="1"/>
   </g>
 
   <!-- ===== tall centre mushroom ===== -->
-  <path d="M40 754 C 38 660 40 560 42 484 C 44 480 48 480 50 484 C 52 560 54 660 52 754"
+  <path d="M40 754 C 39 700 40 650 42 602 C 44 598 48 598 50 602 C 52 650 53 700 52 754"
         fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.5"
         stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26 482 C 26 458 40 444 46 444 C 52 444 66 458 66 482
-           C 58 488 52 484 46 486 C 40 484 34 488 26 482 Z"
+  <path d="M26 600 C 26 576 40 562 46 562 C 52 562 66 576 66 600
+           C 58 606 52 602 46 604 C 40 602 34 606 26 600 Z"
         fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.6"
         stroke-linejoin="round"/>
   <g fill="#efe6f7">
-    <circle cx="38" cy="466" r="2"/><circle cx="50" cy="462" r="2.3"/>
-    <circle cx="46" cy="476" r="1.6"/><circle cx="58" cy="472" r="1.6"/>
+    <circle cx="38" cy="584" r="2"/><circle cx="50" cy="580" r="2.3"/>
+    <circle cx="46" cy="594" r="1.6"/><circle cx="58" cy="590" r="1.6"/>
   </g>
   <g stroke="#b98fd9" stroke-width="0.7" opacity="0.7">
-    <line x1="34" y1="484" x2="33" y2="492"/>
-    <line x1="42" y1="486" x2="42" y2="494"/>
-    <line x1="50" y1="486" x2="50" y2="494"/>
-    <line x1="58" y1="484" x2="59" y2="492"/>
+    <line x1="34" y1="602" x2="33" y2="610"/>
+    <line x1="42" y1="604" x2="42" y2="612"/>
+    <line x1="50" y1="604" x2="50" y2="612"/>
+    <line x1="58" y1="602" x2="59" y2="610"/>
   </g>
 
   <!-- ===== left mushroom ===== -->
-  <path d="M20 756 C 18 690 20 624 22 582 C 24 579 27 579 28 582 C 30 624 32 690 30 756"
+  <path d="M22 756 C 21 712 22 678 24 654 C 26 651 29 651 30 654 C 32 678 33 712 32 756"
         fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.4"
         stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M10 580 C 10 562 20 552 25 552 C 30 552 40 562 40 580
-           C 33 585 28 581 25 583 C 22 581 17 585 10 580 Z"
+  <path d="M12 652 C 12 634 22 624 27 624 C 32 624 42 634 42 652
+           C 35 657 30 653 27 655 C 24 653 19 657 12 652 Z"
         fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.5"
         stroke-linejoin="round"/>
   <g fill="#efe6f7">
-    <circle cx="19" cy="567" r="1.7"/><circle cx="29" cy="564" r="1.7"/>
-    <circle cx="25" cy="574" r="1.3"/>
+    <circle cx="21" cy="639" r="1.7"/><circle cx="31" cy="636" r="1.7"/>
+    <circle cx="27" cy="646" r="1.3"/>
   </g>
 
   <!-- ===== right mushroom ===== -->
-  <path d="M62 756 C 60 702 62 648 64 612 C 66 609 69 609 70 612 C 72 648 74 702 72 756"
+  <path d="M62 756 C 61 716 62 686 64 666 C 66 663 69 663 70 666 C 72 686 73 716 72 756"
         fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.4"
         stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M53 610 C 53 594 62 585 67 585 C 72 585 81 594 81 610
-           C 75 615 70 611 67 613 C 64 611 59 615 53 610 Z"
+  <path d="M53 664 C 53 648 62 639 67 639 C 72 639 81 648 81 664
+           C 75 669 70 665 67 667 C 64 665 59 669 53 664 Z"
         fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.5"
         stroke-linejoin="round"/>
   <g fill="#efe6f7">
-    <circle cx="61" cy="598" r="1.6"/><circle cx="71" cy="596" r="1.6"/>
-    <circle cx="67" cy="605" r="1.2"/>
+    <circle cx="61" cy="652" r="1.6"/><circle cx="71" cy="650" r="1.6"/>
+    <circle cx="67" cy="659" r="1.2"/>
   </g>
 
   <!-- ===== little mushroom ===== -->
-  <path d="M44 758 C 43 720 44 694 45 676 C 46 674 48 674 49 676 C 50 694 51 720 50 758"
+  <path d="M44 758 C 43 730 44 712 45 700 C 46 698 48 698 49 700 C 50 712 51 730 50 758"
         fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.2"
         stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M38 676 C 38 664 44 658 47 658 C 50 658 56 664 56 676
-           C 51 680 48 677 47 678 C 46 677 43 680 38 676 Z"
+  <path d="M38 700 C 38 688 44 682 47 682 C 50 682 56 688 56 700
+           C 51 704 48 701 47 702 C 46 701 43 704 38 700 Z"
         fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.3"
         stroke-linejoin="round"/>
   <g fill="#efe6f7">
-    <circle cx="44" cy="668" r="1.3"/><circle cx="50" cy="668" r="1.2"/>
+    <circle cx="44" cy="692" r="1.3"/><circle cx="50" cy="692" r="1.2"/>
   </g>
 
   <!-- ground -->
@@ -84,7 +85,7 @@
 
   <!-- annotations -->
   <g fill="#b98fd9" font-family="monospace">
-    <text x="84" y="200" font-size="8" transform="rotate(-90 84 200)">FIG. V — FUNGI</text>
+    <text x="84" y="560" font-size="8" transform="rotate(-90 84 560)">FIG. V — FUNGI</text>
     <text x="10" y="734" font-size="7.5">AMANITA R-05</text>
   </g>
 </svg>
