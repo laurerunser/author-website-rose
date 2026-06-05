@@ -35,11 +35,34 @@
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
   function themeNow() { return document.body.dataset.theme || "blue"; }
+  function pageNow() { return document.body.dataset.page || ""; }
   function setIcon(theme) {
     if (bug.dataset.theme === theme) return;
     bug.innerHTML = ICONS[theme] || ICONS.blue;
     bug.dataset.theme = theme;
   }
+
+  // Easter eggs: on the right page + tab the blob becomes a secret doorway.
+  // The mapping lives in js/easter-eggs.js (window.tabEggFor); the blob only
+  // catches clicks when an egg is registered for the current page+theme, so it
+  // stays purely decorative everywhere else.
+  function refreshEgg() {
+    var href = (typeof window.tabEggFor === "function")
+      ? window.tabEggFor(pageNow(), themeNow())
+      : null;
+    if (href) {
+      bug.dataset.egg = href;
+      bug.style.pointerEvents = "auto";
+      bug.style.cursor = "pointer";
+    } else {
+      delete bug.dataset.egg;
+      bug.style.pointerEvents = "";
+      bug.style.cursor = "";
+    }
+  }
+  bug.addEventListener("click", function () {
+    if (bug.dataset.egg) window.location.href = bug.dataset.egg;
+  });
 
   // the three nav links sit at these x-fractions (match nav.css); the blob
   // weaves: above link 1, below link 2, above link 3, crossing the middle over
@@ -56,9 +79,10 @@
 
   computeGeo();
   setIcon(themeNow());
+  refreshEgg();
 
   if (window.MutationObserver) {
-    var obs = new MutationObserver(function () { setIcon(themeNow()); });
+    var obs = new MutationObserver(function () { setIcon(themeNow()); refreshEgg(); });
     obs.observe(document.body, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
