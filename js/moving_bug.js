@@ -61,7 +61,12 @@
     }
   }
   bug.addEventListener("click", function () {
-    if (bug.dataset.egg) window.location.href = bug.dataset.egg;
+    if (!bug.dataset.egg) return;
+    // remember where we left from (page + tab, identified by its theme) so the
+    // egg's "back" link can return to this exact spot.
+    var from = pageNow() + (themeNow() ? "/" + themeNow() : "");
+    var sep = bug.dataset.egg.indexOf("?") < 0 ? "?" : "&";
+    window.location.href = bug.dataset.egg + sep + "from=" + encodeURIComponent(from);
   });
 
   // the three nav links sit at these x-fractions (match nav.css); the blob
