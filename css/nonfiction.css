@@ -1,6 +1,11 @@
 /* nonfiction.css — non-fiction page extras.
-   Tab numbers alternate green / brown (the green is reused from cards.css;
-   the brown is set here). The card margin-rule + read-more stay red because
-   the page theme ("sepia") isn't one of the per-tab accents. */
+   All tab numbers are green; they alternate a dark (dress) green and a light
+   green. The active tab's card margin-rule + read-more link follow the same
+   green shade, set via an acc-green-* class on .body from nonfiction.js
+   (otherwise .body would fall back to the red accent from cards.css). */
 
-.tab--brown .num{color:var(--brown);}
+.tab--green-dark  .num{color:#2f7d45;}  /* dress green */
+.tab--green-light .num{color:#74c98a;}  /* light green */
+
+.body.acc-green-dark { --accent:#2f7d45; }
+.body.acc-green-light{ --accent:#74c98a; }
