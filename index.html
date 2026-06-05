@@ -7,7 +7,7 @@
 
   <title>Rose Bertrand — Science-fiction & Fantasy Author</title>
 
-  <link rel="icon" href="images/portrait_background.png">
+  <link rel="icon" href="images/original_portrait_background.png">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -23,7 +23,7 @@
   <link rel="stylesheet" href="css/sidebars.css?v=2">
 
   <!-- top -->
-  <link rel="stylesheet" href="css/0_top/portrait.css?v=2">
+  <link rel="stylesheet" href="css/0_top/portrait.css?v=3">
   <link rel="stylesheet" href="css/0_top/stamp.css?v=2">
 
   <!-- middle -->
@@ -45,7 +45,7 @@
     <main class="page">
 
   <aside class="rail rail--left" aria-hidden="true">
-    <img id="rail-left" src="components/spaceship.svg" alt="">
+    <img id="rail-left" src="components/01_blue/spaceship.svg" alt="">
   </aside>
 
   <section class="center">
@@ -70,8 +70,16 @@
       <div class="portrait-wrap">
         <div class="portrait">
           <img
-            src="images/portrait_background.png"
+            class="portrait-img portrait-light"
+            id="portrait-light"
+            src="images/portraits/01_light_blue.png"
             alt="Portrait of Rose Bertrand">
+          <img
+            class="portrait-img portrait-dark"
+            id="portrait-dark"
+            src="images/portraits/01_dark_blue.png"
+            alt=""
+            aria-hidden="true">
         </div>
 
         <svg
@@ -91,10 +99,10 @@
             text-anchor="middle"
             font-size="9"
             letter-spacing="0.5">
-            <textPath href="#portrait-credit-arc" startOffset="50%">portrait by <a
+            <textPath href="#portrait-credit-arc" startOffset="50%">portrait by the wonderful <a
               href="https://www.instagram.com/thanh.illustrates/"
               target="_blank"
-              rel="noopener noreferrer">the wonderful thanh.illustrates</a></textPath>
+              rel="noopener noreferrer">thanh.illustrates</a></textPath>
           </text>
         </svg>
       </div>
@@ -174,12 +182,12 @@
   </section>
 
   <aside class="rail rail--right" aria-hidden="true">
-    <img id="rail-right" src="components/starchart.svg" alt="">
+    <img id="rail-right" src="components/01_blue/starchart.svg" alt="">
   </aside>
 
 </main>
 
-<script src="js/stories.js?v=2"></script>
+<script src="js/stories.js?v=4"></script>
 <script src="js/moving_bug.js?v=4"></script>
 </body>
 

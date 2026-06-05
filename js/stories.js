@@ -2,8 +2,10 @@ const STORIES = [
   {
     tab:"01",
     theme:"blue",
-    left:"components/spaceship.svg",
-    right:"components/starchart.svg",
+    left:"components/01_blue/spaceship.svg",
+    right:"components/01_blue/starchart.svg",
+    portraitLight:"images/portraits/01_light_blue.png",
+    portraitDark:"images/portraits/01_dark_blue.png",
     label:"The Saltglass Sea",
     title:"The Saltglass Sea",
     link:"#",
@@ -16,8 +18,10 @@ const STORIES = [
   {
     tab:"02",
     theme:"green",
-    left:"components/tree.svg",
-    right:"components/birds.svg",
+    left:"components/02_green/tree.svg",
+    right:"components/02_green/birds.svg",
+    portraitLight:"images/portraits/02_light_green.png",
+    portraitDark:"images/portraits/02_dark_green.png",
     label:"Nine Moons of Auber",
     title:"Nine Moons of Auber",
     link:"#",
@@ -30,8 +34,10 @@ const STORIES = [
   {
     tab:"03",
     theme:"yellow",
-    left:"components/dune.svg",
-    right:"components/sun.svg",
+    left:"components/03_yellow/dune.svg",
+    right:"components/03_yellow/sun.svg",
+    portraitLight:"images/portraits/03_light_yellow.png",
+    portraitDark:"images/portraits/03_dark_yellow.png",
     label:"The Cartographer's Wife",
     title:"The Cartographer's Wife",
     link:"#",
@@ -44,8 +50,10 @@ const STORIES = [
   {
     tab:"04",
     theme:"red",
-    left:"components/airplanes.svg",
-    right:"components/mushroom-cloud.svg",
+    left:"components/04_red/airplanes.svg",
+    right:"components/04_red/mushroom-cloud.svg",
+    portraitLight:"images/portraits/04_light_red.png",
+    portraitDark:"images/portraits/04_dark_red.png",
     label:"A Brief History of Static",
     title:"A Brief History of Static",
     link:"#",
@@ -58,8 +66,10 @@ const STORIES = [
   {
     tab:"05",
     theme:"purple",
-    left:"components/constellations.svg",
-    right:"components/mushrooms.svg",
+    left:"components/05_purple/constellations.svg",
+    right:"components/05_purple/mushrooms.svg",
+    portraitLight:"images/portraits/05_light_lilac.png",
+    portraitDark:"images/portraits/05_dark_purple.png",
     label:"Telegrams from the Belt",
     title:"Telegrams from the Belt",
     link:"#",
@@ -75,6 +85,8 @@ const tabsEl = document.getElementById("tabs");
 const storyEl = document.getElementById("story");
 const railLeftEl = document.getElementById("rail-left");
 const railRightEl = document.getElementById("rail-right");
+const portraitLightEl = document.getElementById("portrait-light");
+const portraitDarkEl = document.getElementById("portrait-dark");
 
 let active = 0;
 
@@ -134,6 +146,14 @@ function renderRails() {
 
   if (railRightEl && s.right) {
     railRightEl.src = s.right;
+  }
+
+  // swap the portrait to this tab's colour (it bleeds light↔dark in CSS)
+  if (portraitLightEl && s.portraitLight) {
+    portraitLightEl.src = s.portraitLight;
+  }
+  if (portraitDarkEl && s.portraitDark) {
+    portraitDarkEl.src = s.portraitDark;
   }
 }
 
