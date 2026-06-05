@@ -1,6 +1,16 @@
 /* about.css — the two typed "letter" cards on the About page
    (bio on the left, a note on the writing on the right). */
 
+/* About-page sidebars: a lighter-green backdrop (matching the new SVG art:
+   a giant robot leg on the left, a star system on the right — both drawn in
+   off-white, yellow and brown). Scoped to this page so the stories page's
+   green-tab rail keeps its dark-green theme. */
+body[data-theme="green"] .rail{
+  background:#3c7d50;
+  border-color:#3c7d50;
+  outline-color:rgba(244,236,217,.32);
+}
+
 .letters{
   flex:1 1 auto;
   display:flex;

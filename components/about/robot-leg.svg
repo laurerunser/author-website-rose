@@ -1,0 +1,83 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+  <!-- lighter-green backdrop -->
+  <rect width="90" height="820" fill="#3c7d50"/>
+
+  <!-- faint blueprint grid -->
+  <g stroke="#f4ecd9" stroke-width="0.6" opacity="0.16" stroke-dasharray="1.5 6">
+    <line x1="6" y1="210" x2="84" y2="210"/>
+    <line x1="6" y1="470" x2="84" y2="470"/>
+    <line x1="6" y1="700" x2="84" y2="700"/>
+  </g>
+
+  <!-- ground shadow under the foot -->
+  <ellipse cx="45" cy="806" rx="42" ry="7" fill="#6b4a2f" opacity="0.45"/>
+
+  <!-- ================= THIGH (runs off the top) ================= -->
+  <path d="M18 0 L72 0 L70 300 L20 300 Z" fill="#f4ecd9" stroke="#6b4a2f" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#6b4a2f" stroke-width="1.2" opacity="0.8">
+    <line x1="45" y1="0" x2="45" y2="300"/>
+    <line x1="20" y1="118" x2="70" y2="118"/>
+    <line x1="20" y1="212" x2="70" y2="212"/>
+  </g>
+  <!-- thigh hazard chevrons (yellow) -->
+  <g fill="#e8c44a" stroke="#6b4a2f" stroke-width="1" stroke-linejoin="round">
+    <path d="M24 150 L45 140 L66 150 L66 162 L45 152 L24 162 Z"/>
+    <path d="M24 178 L45 168 L66 178 L66 190 L45 180 L24 190 Z"/>
+  </g>
+  <!-- thigh bolts -->
+  <g fill="#3c7d50" stroke="#6b4a2f" stroke-width="1.4">
+    <circle cx="27" cy="22" r="3"/><circle cx="63" cy="22" r="3"/>
+    <circle cx="27" cy="286" r="3"/><circle cx="63" cy="286" r="3"/>
+  </g>
+
+  <!-- ================= KNEE ================= -->
+  <path d="M20 300 C 17 332 24 360 45 362 C 66 360 73 332 70 300 Z"
+        fill="#f4ecd9" stroke="#6b4a2f" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="45" cy="330" r="11" fill="#e8c44a" stroke="#6b4a2f" stroke-width="2"/>
+  <circle cx="45" cy="330" r="4" fill="#f4ecd9" stroke="#6b4a2f" stroke-width="1.2"/>
+
+  <!-- ================= SHIN ================= -->
+  <!-- hydraulic pistons flanking the shin (drawn first, behind plate) -->
+  <g stroke-linecap="round">
+    <line x1="18" y1="368" x2="18" y2="652" stroke="#f4ecd9" stroke-width="4"/>
+    <line x1="72" y1="368" x2="72" y2="652" stroke="#f4ecd9" stroke-width="4"/>
+    <rect x="14" y="430" width="8" height="64" fill="#6b4a2f" stroke="#6b4a2f" stroke-width="1"/>
+    <rect x="68" y="430" width="8" height="64" fill="#6b4a2f" stroke="#6b4a2f" stroke-width="1"/>
+  </g>
+  <path d="M24 362 L66 362 L62 660 L28 660 Z"
+        fill="#f4ecd9" stroke="#6b4a2f" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#6b4a2f" stroke-width="1.2" opacity="0.8">
+    <line x1="45" y1="362" x2="45" y2="660"/>
+    <line x1="27" y1="468" x2="63" y2="468"/>
+  </g>
+  <!-- shin hazard band -->
+  <rect x="26" y="540" width="38" height="22" fill="#e8c44a" stroke="#6b4a2f" stroke-width="1.5"/>
+  <g stroke="#6b4a2f" stroke-width="3">
+    <line x1="30" y1="562" x2="40" y2="540"/>
+    <line x1="40" y1="562" x2="50" y2="540"/>
+    <line x1="50" y1="562" x2="60" y2="540"/>
+  </g>
+
+  <!-- ================= ANKLE ================= -->
+  <path d="M28 660 L62 660 L66 700 L24 700 Z"
+        fill="#f4ecd9" stroke="#6b4a2f" stroke-width="2" stroke-linejoin="round"/>
+  <circle cx="45" cy="690" r="9" fill="#e8c44a" stroke="#6b4a2f" stroke-width="2"/>
+
+  <!-- ================= FOOT ================= -->
+  <path d="M14 700 L76 700 L84 770 C 84 786 78 796 64 796 L26 796 C 12 796 6 786 6 770 Z"
+        fill="#f4ecd9" stroke="#6b4a2f" stroke-width="2" stroke-linejoin="round"/>
+  <path d="M6 792 L84 792 L82 805 L8 805 Z" fill="#e8c44a" stroke="#6b4a2f" stroke-width="2" stroke-linejoin="round"/>
+  <g stroke="#6b4a2f" stroke-width="2" stroke-linecap="round">
+    <line x1="14" y1="730" x2="76" y2="730"/>
+    <line x1="30" y1="742" x2="30" y2="792"/>
+    <line x1="45" y1="746" x2="45" y2="792"/>
+    <line x1="60" y1="742" x2="60" y2="792"/>
+  </g>
+  <g fill="#3c7d50" stroke="#6b4a2f" stroke-width="1.4">
+    <circle cx="18" cy="720" r="3"/><circle cx="72" cy="720" r="3"/>
+  </g>
+
+  <!-- annotations -->
+  <text x="84" y="120" fill="#f4ecd9" opacity="0.85" font-family="monospace" font-size="8" transform="rotate(-90 84 120)">FIG. — COLOSSUS</text>
+  <text x="10" y="816" fill="#f4ecd9" opacity="0.85" font-family="monospace" font-size="7.5">LEFT LEG · IX</text>
+</svg>
