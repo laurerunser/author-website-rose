@@ -10,6 +10,17 @@
 (function () {
   "use strict";
 
+  // "back" returns to wherever the egg was opened from — the page + tab, passed
+  // as ?from=<route>[/<tab>] by the blob. Validate to a simple token first, then
+  // point the back link at that spot in the single-page app (#route/tab).
+  (function () {
+    var from = new URLSearchParams(location.search).get("from");
+    var back = document.querySelector(".back");
+    if (back && from && /^[a-z]+(\/[a-z0-9]+)?$/i.test(from)) {
+      back.setAttribute("href", "../index.html#" + from);
+    }
+  })();
+
   var SVG_URL = "../components/easter-egg/orbital-station.svg";
   var TRAVEL = 5500;   // px of cursor travel for a fully assembled drawing
   var WIN = 0.15;      // slice of the timeline each element takes to appear

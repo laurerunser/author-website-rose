@@ -100,5 +100,9 @@
     if (portraitDarkEl && s.portraitDark) { portraitDarkEl.src = s.portraitDark; portraitDarkEl.style.display = ""; }
   }
 
-  window.StoriesPage = { init: function () { active = 0; render(); } };
+  function indexOfTheme(t) { for (var i = 0; i < STORIES.length; i++) if (STORIES[i].theme === t) return i; return 0; }
+
+  // init() opens tab 1; init("green") opens the tab whose theme is green, etc.
+  // (used when returning from an easter egg so you land back on the same tab).
+  window.StoriesPage = { init: function (tab) { active = tab ? indexOfTheme(tab) : 0; render(); } };
 })();
