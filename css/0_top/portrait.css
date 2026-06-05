@@ -1,7 +1,7 @@
 
   .portrait{
   flex:0 0 auto;
-  width:clamp(96px,8.8vw,136px);
+  width:clamp(120px,11vw,170px);
   aspect-ratio:1;
   border-radius:50%;
   border:3px double var(--ink);
