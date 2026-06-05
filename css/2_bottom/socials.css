@@ -1,0 +1,16 @@
+ .socials{
+    display:flex; align-items:center; gap:20px; flex-wrap:wrap; flex:0 0 auto;
+    font-family:'Special Elite',monospace; font-size:clamp(12px,1.05vw,14.5px);
+    border-top:2px dashed rgba(33,29,22,.4); margin-top:2px; padding-top:12px;
+  }
+  .socials .find{color:var(--faint); letter-spacing:.12em; text-transform:uppercase; font-size:12px;}
+  .social{
+    color:var(--ink); text-decoration:none; display:inline-flex; align-items:center; gap:7px;
+    transition:transform .18s ease, color .18s;
+  }
+  .social .star{color:var(--red);}
+  .social .nm{border-bottom:1.5px solid transparent;}
+  .social .hd{color:var(--faint); font-size:12.5px;}
+  .social:hover{color:var(--red); transform:translateY(-2px) rotate(-2deg);}
+  .social:hover .nm{border-bottom-color:var(--red);}
+  .social:hover .star{color:var(--red);}

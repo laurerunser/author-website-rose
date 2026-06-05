@@ -1,0 +1,32 @@
+:root{
+  --ink:#211d16;
+  --red:#c43b27;
+  --blue:#37579e;
+  --manila:#ecdfbf;
+  --card:#fbf6ea;
+  --muted:#4a4234;
+  --faint:#8a7f68;
+}
+
+*{
+  box-sizing:border-box;
+}
+
+html,
+body{
+  height:100%;
+}
+
+body{
+  margin:0;
+  background:var(--manila);
+  background-image:
+    radial-gradient(
+      circle at 50% 0%,
+      rgba(0,0,0,0) 60%,
+      rgba(0,0,0,.05) 100%
+    );
+  color:var(--ink);
+  font-family:'EB Garamond', Georgia, serif;
+  overflow:auto;
+}

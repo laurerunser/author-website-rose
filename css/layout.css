@@ -1,0 +1,22 @@
+  .page{display:flex; min-height:100vh;}
+
+  .center{
+    flex:1; min-width:0; display:flex; flex-direction:column;
+    padding:clamp(18px,2.4vh,30px) clamp(16px,2vw,26px) 16px; gap:clamp(10px,1.6vh,16px);
+  }
+
+  .head{display:flex; align-items:center; justify-content:space-between; gap:clamp(14px,1.6vw,20px); flex:0 0 auto;}
+  
+  .name{
+    font-family:'DM Serif Display',Georgia,serif; font-size:clamp(40px,5vw,62px);
+    line-height:.92; margin:0; letter-spacing:-.01em; white-space:nowrap;
+  }
+  .tagline{
+    font-family:'Special Elite',monospace; font-size:clamp(12px,1.05vw,15px);
+    letter-spacing:.03em; margin-top:12px; color:var(--muted);
+  }
+  
+  .blurb{
+    font-size:clamp(15px,1.25vw,18.5px); line-height:1.5; margin:0; flex:0 0 auto;
+    max-width:820px; color:#332e24; text-wrap:pretty;
+  }

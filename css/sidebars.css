@@ -1,0 +1,31 @@
+   /* .rail{
+    flex:0 0 clamp(66px,6.2vw,98px); margin:18px; border-radius:3px;
+    background:#0b1a2c;
+    border:3px solid #0b1a2c; outline:2px dashed rgba(120,162,222,.30); outline-offset:-8px;
+    position:relative; overflow:hidden;
+  }
+  .rail svg{position:absolute; inset:9px; width:calc(100% - 18px); height:calc(100% - 18px); display:block;}
+  */
+
+.rail{
+  flex:0 0 clamp(66px,6.2vw,98px);
+  margin:18px;
+  border-radius:3px;
+  background:#0b1a2c;
+  border:3px solid #0b1a2c;
+  outline:2px dashed rgba(120,162,222,.30);
+  outline-offset:-8px;
+  position:relative;
+  overflow:hidden;
+}
+
+.rail--right{margin-left:0;}
+.rail--left{margin-right:0;}
+
+.rail img{
+  position:absolute;
+  inset:9px;
+  width:calc(100% - 18px);
+  height:calc(100% - 18px);
+  display:block;
+}
