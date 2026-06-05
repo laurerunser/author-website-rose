@@ -62,10 +62,36 @@
         </div>
       </div>
 
-      <div class="portrait">
-        <img
-          src="images/portrait_background.png"
-          alt="Portrait of Rose Bertrand">
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <img
+            src="images/portrait_background.png"
+            alt="Portrait of Rose Bertrand">
+        </div>
+
+        <svg
+          class="portrait-credit"
+          viewBox="0 0 220 220"
+          role="img"
+          aria-label="Portrait by the wonderful thanh.illustrates">
+          <defs>
+            <path id="portrait-credit-arc" d="M34 110 A76 76 0 0 1 186 110"/>
+          </defs>
+          <circle
+            class="pc-hit"
+            cx="110" cy="110" r="84"
+            fill="transparent"
+            pointer-events="all"/>
+          <text
+            text-anchor="middle"
+            font-size="9"
+            letter-spacing="0.5">
+            <textPath href="#portrait-credit-arc" startOffset="50%">portrait by <a
+              href="https://www.instagram.com/thanh.illustrates/"
+              target="_blank"
+              rel="noopener noreferrer">the wonderful thanh.illustrates</a></textPath>
+          </text>
+        </svg>
       </div>
 
     </header>
@@ -150,14 +176,7 @@
   <div class="credit-line"></div>
   <p>
     made with my little hands and no AI ·
-    last updated June 2026 ·
-    portrait by
-    <a
-      href="https://www.instagram.com/thanh.illustrates/"
-      target="_blank"
-      rel="noopener noreferrer">
-      the wonderful thanh.illustrates
-    </a>
+    last updated June 2026
   </p>
 
 </footer>

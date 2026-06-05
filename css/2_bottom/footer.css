@@ -1,0 +1,18 @@
+/* small credit pinned to the bottom-right of the screen.
+   position:fixed keeps it visible even though the desktop layout
+   locks the page to 100vh with overflow:hidden. */
+.site-credit{
+  position:fixed;
+  right:14px;
+  bottom:10px;
+  margin:0;
+  z-index:5;
+  font-family:'Special Elite', monospace;
+  font-size:11px;
+  letter-spacing:.04em;
+  color:var(--faint);
+  text-align:right;
+  pointer-events:none;
+}
+
+.site-credit p{margin:0;}

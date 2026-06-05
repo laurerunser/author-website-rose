@@ -1,6 +1,11 @@
 
+  .portrait-wrap{
+    position:relative;
+    flex:0 0 auto;
+    display:inline-flex;
+  }
+
   .portrait{
-  flex:0 0 auto;
   width:clamp(120px,11vw,170px);
   aspect-ratio:1;
   border-radius:50%;
@@ -15,5 +20,33 @@
     object-fit:cover; /* fills the circle */
     display:block;
   }
- 
-  .portrait:hover{transform:rotate(3deg) scale(1.04);}
+
+  .portrait-wrap:hover .portrait{transform:rotate(3deg) scale(1.04);}
+
+  /* curved portrait credit — hugs the portrait, only on hover */
+  .portrait-credit{
+    position:absolute;
+    left:50%;
+    top:50%;
+    width:157%;
+    height:157%;
+    transform:translate(-50%,-50%);
+    pointer-events:none;
+    opacity:0;
+    overflow:visible;
+    transition:opacity .35s ease;
+  }
+  .portrait-wrap:hover .portrait-credit,
+  .portrait-credit:focus-within{
+    opacity:1;
+    pointer-events:auto;
+  }
+  .portrait-credit text{
+    font-family:'Special Elite', monospace;
+    fill:var(--muted);
+  }
+  .portrait-credit a{
+    fill:var(--ink);
+    text-decoration:underline;
+  }
+  .portrait-credit a:hover{fill:var(--red);}
