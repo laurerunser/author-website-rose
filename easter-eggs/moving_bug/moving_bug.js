@@ -43,7 +43,7 @@
   }
 
   // Easter eggs: on the right page + tab the blob becomes a secret doorway.
-  // The mapping lives in js/easter-eggs.js (window.tabEggFor); the blob only
+  // The mapping lives in easter-eggs/easter-eggs.js (window.tabEggFor); the blob only
   // catches clicks when an egg is registered for the current page+theme, so it
   // stays purely decorative everywhere else.
   function refreshEgg() {

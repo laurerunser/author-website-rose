@@ -1,6 +1,6 @@
 /* moving_bug — a blob that loops a figure-8 in the header gap, around the two
    nav links. The roam area is this flex item; the .bug is positioned and moved
-   along the path by js/moving_bug.js, and bounces via the CSS below. */
+   along the path by easter-eggs/moving_bug/moving_bug.js, and bounces via the CSS below. */
 
 .moving-bug{
   flex:2 1 auto;
