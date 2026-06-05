@@ -26,6 +26,7 @@
 
 .letter--bio{transform:rotate(-1deg);}
 .letter--work{transform:rotate(.9deg);}
+.letter--ai{transform:rotate(-.6deg);}
 
 .letter h3{
   margin:0 0 12px;
@@ -57,5 +58,6 @@
 
 @media (prefers-reduced-motion:reduce){
   .letter--bio,
-  .letter--work{transform:none;}
+  .letter--work,
+  .letter--ai{transform:none;}
 }

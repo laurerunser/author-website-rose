@@ -21,6 +21,7 @@
   }
 
   .body{
+    --accent:var(--red);
     background:var(--card); border:2px solid var(--ink); border-radius:4px;
     padding:clamp(14px,2vh,20px) 26px clamp(14px,2vh,18px) 60px; position:relative;
     min-height:220px;
@@ -29,7 +30,7 @@
   }
   .body::before{ /* red margin rule */
     content:""; position:absolute; left:40px; top:0; bottom:0; width:2px;
-    background:var(--red); opacity:.8;
+    background:var(--accent); opacity:.8;
   }
   .hole{
     position:absolute; left:16px; top:50%; width:13px; height:13px; border-radius:50%;
@@ -42,11 +43,18 @@
   }
   .story p{font-size:clamp(13.5px,1.1vw,16px); line-height:1.45; margin:0 0 8px; color:#322d23; text-wrap:pretty;}
   .read-more{
-    font-family:'Special Elite',monospace; font-size:clamp(12px,1vw,14px); color:var(--red);
-    text-decoration:none; border-bottom:1.5px solid var(--red); display:inline-block;
+    font-family:'Special Elite',monospace; font-size:clamp(12px,1vw,14px); color:var(--accent);
+    text-decoration:none; border-bottom:1.5px solid var(--accent); display:inline-block;
     margin-top:2px; white-space:nowrap; transition:transform .18s ease;
   }
   .read-more:hover{transform:translateX(4px);}
+
+  /* the margin rule + read-more follow the active tab's colour */
+  [data-theme="blue"]   .body{--accent:var(--num-blue);}
+  [data-theme="green"]  .body{--accent:var(--num-green);}
+  [data-theme="yellow"] .body{--accent:var(--num-yellow);}
+  [data-theme="red"]    .body{--accent:var(--num-red);}
+  [data-theme="purple"] .body{--accent:var(--num-purple);}
 
   /* fade-in when a tab is selected */
   .story{animation:fade .28s ease both;}
