@@ -11,8 +11,8 @@
   flex:0 0 clamp(66px,6.2vw,98px);
   margin:18px;
   border-radius:3px;
-  background:#0b1a2c;
-  border:3px solid #0b1a2c;
+  background:var(--rail-blue);
+  border:3px solid var(--rail-blue);
   outline:2px dashed rgba(120,162,222,.30);
   outline-offset:-8px;
   position:relative;

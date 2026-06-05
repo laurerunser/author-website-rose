@@ -6,6 +6,10 @@
   --card:#fbf6ea;
   --muted:#4a4234;
   --faint:#8a7f68;
+
+  /* per-tab themes — rail = svg backdrop, num = tab number (matches the svg) */
+  --rail-blue:#1b3a5e;
+  --num-blue:#1b3a5e;
 }
 
 *{

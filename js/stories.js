@@ -1,6 +1,7 @@
 const STORIES = [
   {
     tab:"01",
+    theme:"blue",
     label:"The Saltglass Sea",
     title:"The Saltglass Sea",
     link:"#",
@@ -67,7 +68,10 @@ function renderTabs() {
   STORIES.forEach((s, i) => {
     const b = document.createElement("button");
 
-    b.className = "tab" + (i === active ? " is-active" : "");
+    b.className =
+      "tab" +
+      (s.theme ? " tab--" + s.theme : "") +
+      (i === active ? " is-active" : "");
 
     b.setAttribute("role", "tab");
     b.setAttribute(
