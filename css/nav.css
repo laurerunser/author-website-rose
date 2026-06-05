@@ -18,6 +18,10 @@
   transition:color .2s ease;
 }
 
+/* typewriter brackets so the links read as pressable: [ my stories ] */
+.loop-link::before{content:"[\00a0";}
+.loop-link::after{content:"\00a0]";}
+
 /* one link near the centre of each lobe of the ∞ */
 .loop-link--stories{left:22%;}
 .loop-link--about{left:78%;}
