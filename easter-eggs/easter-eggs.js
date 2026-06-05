@@ -1,5 +1,5 @@
 /* easter-eggs.js — a tiny registry of tab easter eggs that the moving blob
-   consults (see js/moving_bug.js). Each entry maps a page + the active tab's
+   consults (see easter-eggs/moving_bug/moving_bug.js). Each entry maps a page + the active tab's
    theme to a destination URL. On the stories page a tab is identified by its
    theme colour (blue, green, yellow, red, purple), so "the first/blue tab" is
    simply theme:"blue".
@@ -10,8 +10,8 @@
   "use strict";
 
   var TAB_EGGS = [
-    { page: "stories", theme: "blue", href: "easter-egg/" }
-    // , { page: "stories", theme: "green", href: "some-other-egg/" }
+    { page: "stories", theme: "blue", href: "easter-eggs/fiction/01_orbital_station.html" }
+    // , { page: "stories", theme: "green", href: "easter-eggs/fiction/02_some-other-egg.html" }
     // , { page: "nonfic",  theme: "sepia", href: "..." }
   ];
 

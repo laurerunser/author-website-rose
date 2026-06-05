@@ -22,7 +22,7 @@
 .loop-link::before{content:"[\00a0";}
 .loop-link::after{content:"\00a0]";}
 
-/* anchored to match the blob's weave points (see moving_bug.js ANCHORS) */
+/* anchored to match the blob's weave points (see easter-eggs/moving_bug/moving_bug.js ANCHORS) */
 .loop-link--about{left:16%;}
 .loop-link--stories{left:50%;}
 .loop-link--nonfic{left:84%;}

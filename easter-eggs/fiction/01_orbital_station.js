@@ -1,4 +1,4 @@
-/* easter-egg.js — assembles the orbital-station blueprint as the cursor moves.
+/* 01_orbital_station.js — assembles the orbital-station blueprint as the cursor moves.
 
    The SVG is fetched + injected, then every drawable element is revealed
    along a shared 0..1 timeline (document order == build order):
@@ -17,11 +17,11 @@
     var from = new URLSearchParams(location.search).get("from");
     var back = document.querySelector(".back");
     if (back && from && /^[a-z]+(\/[a-z0-9]+)?$/i.test(from)) {
-      back.setAttribute("href", "../index.html#" + from);
+      back.setAttribute("href", "../../index.html#" + from);
     }
   })();
 
-  var SVG_URL = "../components/easter-egg/orbital-station.svg";
+  var SVG_URL = "01_orbital_station.svg";
   var TRAVEL = 5500;   // px of cursor travel for a fully assembled drawing
   var WIN = 0.15;      // slice of the timeline each element takes to appear
 

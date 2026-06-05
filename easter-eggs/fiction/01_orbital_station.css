@@ -1,6 +1,6 @@
-/* easter-egg.css — a full-bleed blueprint sheet. The orbital-station drawing
+/* 01_orbital_station.css — a full-bleed blueprint sheet. The orbital-station drawing
    assembles itself, line by line, as the cursor wanders the page (see
-   js/easter-egg.js). Everything here is the "sheet": the gridded paper, the
+   01_orbital_station.js). Everything here is the "sheet": the gridded paper, the
    drafting crosshair, the corner read-outs and the title block. */
 
 :root{
