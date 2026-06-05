@@ -1,0 +1,49 @@
+/* moving_bug — gentle drifting creature in the header gap.
+   The roam area is this flex item that fills the space between the name
+   and the portrait; the .bug is absolutely positioned and animated by
+   js/moving_bug.js. Purely decorative (aria-hidden, no pointer events). */
+
+.moving-bug{
+  flex:1 1 auto;
+  min-width:0;
+  align-self:stretch;
+  position:relative;
+  overflow:visible;
+  pointer-events:none;
+}
+
+.moving-bug .bug{
+  position:absolute;
+  left:0;
+  top:0;
+  width:clamp(30px,3.2vw,42px);
+  height:clamp(30px,3.2vw,42px);
+  transform:translate(0,0);
+  transition:transform 5s cubic-bezier(.45,.05,.55,.95);
+  will-change:transform;
+}
+
+.moving-bug .bug svg{
+  display:block;
+  width:100%;
+  height:100%;
+  overflow:visible;
+}
+
+/* the purple blob wobbles like liquid while it drifts */
+.moving-bug .bug[data-theme="purple"] svg{
+  transform-origin:50% 55%;
+  animation:bug-blob 3.4s ease-in-out infinite;
+}
+
+@keyframes bug-blob{
+  0%,100%{transform:scale(1,1)      rotate(0deg);}
+  25%    {transform:scale(1.08,.92) rotate(3deg);}
+  50%    {transform:scale(.93,1.07) rotate(-2deg);}
+  75%    {transform:scale(1.05,.95) rotate(2deg);}
+}
+
+@media (prefers-reduced-motion:reduce){
+  .moving-bug .bug{transition:none;}
+  .moving-bug .bug[data-theme="purple"] svg{animation:none;}
+}

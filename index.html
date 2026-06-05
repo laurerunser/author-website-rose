@@ -33,6 +33,9 @@
   <link rel="stylesheet" href="css/2_bottom/socials.css">
   <link rel="stylesheet" href="css/2_bottom/footer.css">
 
+  <!-- moving bug -->
+  <link rel="stylesheet" href="css/moving_bug.css">
+
   <!-- always last -->
   <link rel="stylesheet" href="css/mobile.css">
 </head>
@@ -55,12 +58,14 @@
         ★ author ★
       </div>
 
-      <div style="flex:1; min-width:0;">
+      <div style="flex:0 1 auto; min-width:0;">
         <h1 class="name">Rose Bertrand</h1>
         <div class="tagline">
           Science-fiction &amp; fantasy author
         </div>
       </div>
+
+      <div class="moving-bug" id="moving-bug" aria-hidden="true"></div>
 
       <div class="portrait-wrap">
         <div class="portrait">
@@ -182,6 +187,7 @@
 </footer>
 
 <script src="js/stories.js"></script>
+<script src="js/moving_bug.js"></script>
 </body>
 
 </html>
