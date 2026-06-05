@@ -17,7 +17,15 @@
   outline-offset:-8px;
   position:relative;
   overflow:hidden;
+  transition:background .3s ease, border-color .3s ease, outline-color .3s ease;
 }
+
+/* per-tab theming — driven by [data-theme] on <body>, set when a tab changes.
+   the blue theme is the default above. */
+[data-theme="green"]  .rail{background:var(--rail-green);  border-color:var(--rail-green);  outline-color:rgba(116,201,138,.30);}
+[data-theme="yellow"] .rail{background:var(--rail-yellow); border-color:var(--rail-yellow); outline-color:rgba(232,196,92,.30);}
+[data-theme="red"]    .rail{background:var(--rail-red);    border-color:var(--rail-red);    outline-color:rgba(232,118,94,.30);}
+[data-theme="purple"] .rail{background:var(--rail-purple); border-color:var(--rail-purple); outline-color:rgba(185,143,217,.30);}
 
 .rail--right{margin-left:0;}
 .rail--left{margin-right:0;}

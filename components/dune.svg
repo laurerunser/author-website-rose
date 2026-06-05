@@ -1,0 +1,67 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- sky grid -->
+  <g stroke="#e8c45c" stroke-width="0.6" opacity="0.35" stroke-dasharray="1.5 5">
+    <line x1="45" y1="60" x2="45" y2="560"/>
+    <line x1="6" y1="200" x2="84" y2="200"/>
+    <line x1="6" y1="380" x2="84" y2="380"/>
+  </g>
+
+  <!-- wind direction -->
+  <g stroke="#e8c45c" stroke-width="0.9" fill="none">
+    <line x1="20" y1="130" x2="58" y2="130"/>
+    <path d="M52 126 L60 130 L52 134"/>
+  </g>
+
+  <!-- blown sand off the crest -->
+  <g fill="#e8c45c">
+    <circle cx="64" cy="592" r="1.3"/>
+    <circle cx="71" cy="583" r="1.1"/>
+    <circle cx="78" cy="577" r="1"/>
+    <circle cx="84" cy="573" r="0.9"/>
+  </g>
+
+  <!-- dune body -->
+  <path d="M4 770 L4 750
+           C 22 726 36 664 50 612
+           Q 56 600 62 614
+           C 72 648 80 686 86 714
+           L86 770 Z"
+        fill="rgba(232,196,92,.16)" stroke="none"/>
+
+  <!-- crest profile -->
+  <path d="M4 750 C 22 726 36 664 50 612 Q 56 600 62 614 C 72 648 80 686 86 714"
+        fill="none" stroke="#f7eccb" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- sand ripples -->
+  <g fill="none" stroke="#f7eccb" stroke-width="0.8" opacity="0.7">
+    <path d="M10 760 C 26 740 38 702 48 668"/>
+    <path d="M18 766 C 32 752 44 722 54 692"/>
+    <path d="M62 636 C 70 662 78 690 84 714"/>
+  </g>
+
+  <!-- grass on the crest -->
+  <g fill="none" stroke="#f7eccb" stroke-width="1"
+     stroke-linecap="round">
+    <path d="M50 611 l -3 -10"/>
+    <path d="M53 608 l -1 -12"/>
+    <path d="M56 606 l 2 -10"/>
+    <path d="M59 609 l 4 -7"/>
+    <path d="M47 614 l -4 -6"/>
+  </g>
+
+  <!-- height dimension -->
+  <g stroke="#e8c45c" stroke-width="0.9" fill="none">
+    <line x1="80" y1="612" x2="80" y2="704"/>
+    <path d="M77 618 L80 610 L83 618"/>
+    <path d="M77 698 L80 706 L83 698"/>
+  </g>
+
+  <!-- annotations -->
+  <g fill="#e8c45c" font-family="monospace">
+    <text x="84" y="150" font-size="8" transform="rotate(-90 84 150)">FIG. III — DUNE</text>
+    <text x="74" y="676" font-size="7.5" transform="rotate(-90 74 676)">h 41 m</text>
+    <text x="10" y="730" font-size="7.5">ERG R-03</text>
+  </g>
+</svg>

@@ -1,0 +1,95 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- ground + faint plot grid -->
+  <g stroke="#74c98a" stroke-width="0.8">
+    <line x1="6" y1="744" x2="84" y2="744" stroke-dasharray="9 3 1.5 3"/>
+    <g stroke-width="0.6" opacity="0.5" stroke-dasharray="1.5 4">
+      <line x1="45" y1="120" x2="45" y2="744"/>
+      <line x1="6" y1="300" x2="84" y2="300"/>
+      <line x1="6" y1="470" x2="84" y2="470"/>
+      <line x1="6" y1="620" x2="84" y2="620"/>
+    </g>
+  </g>
+
+  <!-- roots -->
+  <g fill="none" stroke="#eaf6ec" stroke-width="1.3"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M45 744 C 40 760 33 768 22 776"/>
+    <path d="M45 744 C 47 762 52 770 60 778"/>
+    <path d="M45 744 C 44 758 42 766 40 778"/>
+  </g>
+
+  <!-- crown: organic outline with a faint green wash -->
+  <path d="M45 372
+           C 18 360 8 322 14 286
+           C 4 262 10 224 30 212
+           C 28 178 44 150 64 158
+           C 78 142 92 168 82 196
+           C 94 222 86 264 72 278
+           C 80 314 64 360 45 372 Z"
+        fill="rgba(116,201,138,.14)"
+        stroke="#eaf6ec"
+        stroke-width="1.5"
+        stroke-linejoin="round"/>
+
+  <!-- trunk + main branches -->
+  <g fill="none" stroke="#eaf6ec" stroke-width="1.6"
+     stroke-linecap="round" stroke-linejoin="round">
+    <path d="M40 744 C 41 640 43 520 44 372"/>
+    <path d="M50 744 C 49 640 47 520 46 372"/>
+
+    <path d="M45 360 C 40 330 30 300 24 276"/>
+    <path d="M45 348 C 52 322 64 300 70 270"/>
+    <path d="M44 320 C 40 300 36 286 30 230"/>
+    <path d="M46 300 C 52 280 60 250 62 210"/>
+    <path d="M45 250 C 44 222 45 196 45 172"/>
+  </g>
+
+  <!-- twigs -->
+  <g fill="none" stroke="#eaf6ec" stroke-width="0.9"
+     stroke-linecap="round">
+    <path d="M30 230 l -8 -14"/>
+    <path d="M62 210 l 9 -12"/>
+    <path d="M45 172 l -7 -12"/>
+    <path d="M45 172 l 8 -11"/>
+    <path d="M24 276 l -9 -8"/>
+    <path d="M70 270 l 9 -7"/>
+  </g>
+
+  <!-- leaves / foliage dots -->
+  <g fill="#eaf6ec">
+    <circle cx="22" cy="214" r="1.5"/>
+    <circle cx="34" cy="182" r="1.7"/>
+    <circle cx="56" cy="174" r="1.5"/>
+    <circle cx="70" cy="200" r="1.6"/>
+    <circle cx="16" cy="288" r="1.5"/>
+    <circle cx="76" cy="262" r="1.6"/>
+    <circle cx="45" cy="156" r="1.8"/>
+    <circle cx="30" cy="262" r="1.4"/>
+    <circle cx="60" cy="246" r="1.5"/>
+    <circle cx="48" cy="300" r="1.4"/>
+  </g>
+
+  <!-- green accent buds -->
+  <g fill="#74c98a">
+    <circle cx="40" cy="240" r="2"/>
+    <circle cx="55" cy="216" r="2.2"/>
+    <circle cx="26" cy="248" r="1.8"/>
+    <circle cx="64" cy="284" r="1.8"/>
+    <circle cx="38" cy="300" r="1.6"/>
+  </g>
+
+  <!-- height dimension on the right -->
+  <g stroke="#74c98a" stroke-width="0.9" fill="none">
+    <line x1="78" y1="392" x2="78" y2="730"/>
+    <path d="M75 398 L78 390 L81 398"/>
+    <path d="M75 724 L78 732 L81 724"/>
+  </g>
+
+  <!-- annotations -->
+  <g fill="#74c98a" font-family="monospace">
+    <text x="82" y="150" font-size="8" transform="rotate(-90 82 150)">FIG. II — FLORA</text>
+    <text x="74" y="600" font-size="7.5" transform="rotate(-90 74 600)">H 11.4 m</text>
+    <text x="14" y="770" font-size="7.5">QUERCUS R-02</text>
+  </g>
+</svg>

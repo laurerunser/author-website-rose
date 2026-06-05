@@ -9,7 +9,11 @@
   }
   .tab:hover:not(.is-active){transform:translateY(-3px) rotate(-1.5deg);}
   .tab .num{color:var(--red); font-weight:700; flex:0 0 auto;}
-  .tab--blue .num{color:var(--num-blue);}
+  .tab--blue   .num{color:var(--num-blue);}
+  .tab--green  .num{color:var(--num-green);}
+  .tab--yellow .num{color:var(--num-yellow);}
+  .tab--red    .num{color:var(--num-red);}
+  .tab--purple .num{color:var(--num-purple);}
   .tab .lbl{color:var(--muted); overflow:hidden; text-overflow:ellipsis; white-space:nowrap;}
   .tab.is-active{
     background:var(--card); border-bottom-color:var(--card);

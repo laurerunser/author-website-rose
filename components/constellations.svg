@@ -1,0 +1,73 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- flowing ecliptic arcs (decorative, not a grid) -->
+  <g fill="none" stroke="#b98fd9" stroke-width="0.9"
+     stroke-dasharray="2 4" opacity="0.6">
+    <path d="M2 120 C 40 220 20 360 60 470 C 90 560 40 700 70 790"/>
+    <path d="M80 90 C 50 200 78 320 40 430"/>
+  </g>
+
+  <!-- crescent moon -->
+  <path d="M64 118
+           A 18 18 0 1 1 64 152
+           A 13 13 0 1 0 64 118 Z"
+        fill="rgba(185,143,217,.18)"
+        stroke="#efe6f7" stroke-width="1.4"
+        stroke-linejoin="round"/>
+
+  <!-- constellation lines -->
+  <g fill="none" stroke="#b98fd9" stroke-width="0.9" opacity="0.85">
+    <!-- cassiopeia-like W -->
+    <polyline points="14,224 26,204 40,230 54,206 66,232"/>
+    <!-- ladle -->
+    <polyline points="22,352 36,362 50,366 62,358 70,338 78,316"/>
+    <!-- triangle -->
+    <polygon points="28,486 56,466 46,520"/>
+    <!-- swan / cross -->
+    <path d="M45 590 L45 668 M26 614 L64 614 M45 614 L52 596 M45 614 L40 598"/>
+    <!-- lower pair -->
+    <polyline points="30,710 50,724 68,706"/>
+  </g>
+
+  <!-- stars at the joints -->
+  <g fill="#efe6f7">
+    <circle cx="14" cy="224" r="1.7"/><circle cx="26" cy="204" r="2.1"/>
+    <circle cx="40" cy="230" r="1.6"/><circle cx="54" cy="206" r="2"/>
+    <circle cx="66" cy="232" r="1.7"/>
+    <circle cx="22" cy="352" r="1.6"/><circle cx="36" cy="362" r="1.9"/>
+    <circle cx="50" cy="366" r="1.6"/><circle cx="62" cy="358" r="1.7"/>
+    <circle cx="70" cy="338" r="1.5"/><circle cx="78" cy="316" r="2"/>
+    <circle cx="28" cy="486" r="1.8"/><circle cx="56" cy="466" r="2"/>
+    <circle cx="46" cy="520" r="1.6"/>
+    <circle cx="45" cy="590" r="2"/><circle cx="45" cy="668" r="1.7"/>
+    <circle cx="26" cy="614" r="1.6"/><circle cx="64" cy="614" r="1.6"/>
+    <circle cx="30" cy="710" r="1.6"/><circle cx="50" cy="724" r="2"/>
+    <circle cx="68" cy="706" r="1.6"/>
+  </g>
+
+  <!-- decorative sparkles -->
+  <g fill="#efe6f7">
+    <path d="M70 180 L71.4 183.6 L75 185 L71.4 186.4 L70 190 L68.6 186.4 L65 185 L68.6 183.6 Z"/>
+    <path d="M16 300 L17.2 303 L20 304 L17.2 305 L16 308 L14.8 305 L12 304 L14.8 303 Z"/>
+    <path d="M72 540 L73.4 543.6 L77 545 L73.4 546.4 L72 550 L70.6 546.4 L67 545 L70.6 543.6 Z"/>
+    <path d="M20 640 L21.2 643 L24 644 L21.2 645 L20 648 L18.8 645 L16 644 L18.8 643 Z"/>
+    <path d="M60 760 L61.4 763.6 L65 765 L61.4 766.4 L60 770 L58.6 766.4 L55 765 L58.6 763.6 Z"/>
+  </g>
+
+  <!-- tiny field stars -->
+  <g fill="#b98fd9">
+    <circle cx="34" cy="150" r="1.1"/>
+    <circle cx="50" cy="300" r="1.1"/>
+    <circle cx="18" cy="430" r="1.1"/>
+    <circle cx="66" cy="470" r="1.1"/>
+    <circle cx="32" cy="560" r="1.1"/>
+    <circle cx="74" cy="650" r="1.1"/>
+  </g>
+
+  <!-- annotations -->
+  <g fill="#b98fd9" font-family="monospace">
+    <text x="84" y="420" font-size="8" transform="rotate(-90 84 420)">FIG. V — ZODIAC</text>
+    <text x="8" y="496" font-size="7.5">CASSIOPEIA</text>
+    <text x="10" y="752" font-size="7.5">HOUSE R-05</text>
+  </g>
+</svg>

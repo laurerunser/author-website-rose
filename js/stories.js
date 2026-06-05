@@ -2,6 +2,8 @@ const STORIES = [
   {
     tab:"01",
     theme:"blue",
+    left:"components/spaceship.svg",
+    right:"components/starchart.svg",
     label:"The Saltglass Sea",
     title:"The Saltglass Sea",
     link:"#",
@@ -13,6 +15,9 @@ const STORIES = [
   },
   {
     tab:"02",
+    theme:"green",
+    left:"components/tree.svg",
+    right:"components/birds.svg",
     label:"Nine Moons of Auber",
     title:"Nine Moons of Auber",
     link:"#",
@@ -24,6 +29,9 @@ const STORIES = [
   },
   {
     tab:"03",
+    theme:"yellow",
+    left:"components/dune.svg",
+    right:"components/sun.svg",
     label:"The Cartographer's Wife",
     title:"The Cartographer's Wife",
     link:"#",
@@ -35,6 +43,9 @@ const STORIES = [
   },
   {
     tab:"04",
+    theme:"red",
+    left:"components/airplanes.svg",
+    right:"components/mushroom-cloud.svg",
     label:"A Brief History of Static",
     title:"A Brief History of Static",
     link:"#",
@@ -46,6 +57,9 @@ const STORIES = [
   },
   {
     tab:"05",
+    theme:"purple",
+    left:"components/constellations.svg",
+    right:"components/mushrooms.svg",
     label:"Telegrams from the Belt",
     title:"Telegrams from the Belt",
     link:"#",
@@ -59,6 +73,8 @@ const STORIES = [
 
 const tabsEl = document.getElementById("tabs");
 const storyEl = document.getElementById("story");
+const railLeftEl = document.getElementById("rail-left");
+const railRightEl = document.getElementById("rail-right");
 
 let active = 0;
 
@@ -105,9 +121,26 @@ function renderStory() {
     '">Read the full piece →</a>';
 }
 
+function renderRails() {
+  const s = STORIES[active];
+
+  if (s.theme) {
+    document.body.dataset.theme = s.theme;
+  }
+
+  if (railLeftEl && s.left) {
+    railLeftEl.src = s.left;
+  }
+
+  if (railRightEl && s.right) {
+    railRightEl.src = s.right;
+  }
+}
+
 function render() {
   renderTabs();
   renderStory();
+  renderRails();
 }
 
 render();

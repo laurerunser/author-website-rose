@@ -1,0 +1,54 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- faint plot grid -->
+  <g stroke="#e8765e" stroke-width="0.6" opacity="0.35" stroke-dasharray="1.5 5">
+    <line x1="45" y1="60" x2="45" y2="470"/>
+    <line x1="6" y1="250" x2="84" y2="250"/>
+    <line x1="6" y1="430" x2="84" y2="430"/>
+  </g>
+
+  <!-- formation guide lines -->
+  <g stroke="#e8765e" stroke-width="0.8" stroke-dasharray="3 4" opacity="0.7">
+    <line x1="45" y1="156" x2="21" y2="318"/>
+    <line x1="45" y1="156" x2="69" y2="318"/>
+  </g>
+
+  <!-- contrails -->
+  <g stroke="#e8765e" stroke-width="0.9" stroke-dasharray="2 5" opacity="0.55">
+    <line x1="45" y1="166" x2="45" y2="250"/>
+    <line x1="37" y1="221" x2="37" y2="300"/>
+    <line x1="53" y1="221" x2="53" y2="300"/>
+    <line x1="29" y1="276" x2="29" y2="356"/>
+    <line x1="61" y1="276" x2="61" y2="356"/>
+    <line x1="21" y1="331" x2="21" y2="416"/>
+    <line x1="69" y1="331" x2="69" y2="416"/>
+  </g>
+
+  <!-- the squadron (top-down swept jets, nose up) -->
+  <g fill="#f7dcd2" stroke="#f7dcd2" stroke-width="0.5" stroke-linejoin="round">
+    <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z" transform="translate(37,205) scale(0.85)"/>
+    <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z" transform="translate(53,205) scale(0.85)"/>
+    <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z" transform="translate(29,260) scale(0.85)"/>
+    <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z" transform="translate(61,260) scale(0.85)"/>
+    <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z" transform="translate(21,315) scale(0.85)"/>
+    <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z" transform="translate(69,315) scale(0.85)"/>
+  </g>
+
+  <!-- lead aircraft, highlighted -->
+  <path d="M0 -11 L2 -3 L2 2 L13 7 L3 3 L4 8 L1 7 L0 9 L-1 7 L-4 8 L-3 3 L-13 7 L-2 2 L-2 -3 Z"
+        transform="translate(45,150) scale(0.95)"
+        fill="#e8765e" stroke="#f7dcd2" stroke-width="0.6" stroke-linejoin="round"/>
+
+  <!-- heading marker -->
+  <g stroke="#e8765e" stroke-width="0.9" fill="none">
+    <line x1="45" y1="120" x2="45" y2="104"/>
+    <path d="M42 110 L45 102 L48 110"/>
+  </g>
+
+  <!-- annotations -->
+  <g fill="#e8765e" font-family="monospace">
+    <text x="84" y="470" font-size="8" transform="rotate(-90 84 470)">FIG. IV — SQUADRON</text>
+    <text x="10" y="560" font-size="7.5">VIC · 7</text>
+    <text x="10" y="730" font-size="7.5">ANGELS 30</text>
+  </g>
+</svg>

@@ -8,8 +8,11 @@
   --faint:#8a7f68;
 
   /* per-tab themes — rail = svg backdrop, num = tab number (matches the svg) */
-  --rail-blue:#1b3a5e;
-  --num-blue:#1b3a5e;
+  --rail-blue:#1b3a5e;    --num-blue:#1b3a5e;
+  --rail-green:#16301e;   --num-green:#2f7d45;
+  --rail-yellow:#33280c;  --num-yellow:#a9791a;
+  --rail-red:#3a140e;     --num-red:#c43b27;
+  --rail-purple:#241638;  --num-purple:#7a4fa3;
 }
 
 *{
