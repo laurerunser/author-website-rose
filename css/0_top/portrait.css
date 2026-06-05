@@ -5,6 +5,15 @@
     display:inline-flex;
   }
 
+  /* focusable so a tap / keyboard focus reveals the credit + scales the photo,
+     not just mouse hover (touch devices have no real :hover) */
+  .portrait-wrap:focus{outline:none;}
+  .portrait-wrap:focus-visible{
+    outline:2px dashed var(--ink);
+    outline-offset:6px;
+    border-radius:50%;
+  }
+
   .portrait{
   position:relative;
   width:clamp(140px,13vw,196px);
@@ -36,7 +45,8 @@
     to{opacity:1;}
   }
 
-  .portrait-wrap:hover .portrait{transform:rotate(3deg) scale(1.04);}
+  .portrait-wrap:hover .portrait,
+  .portrait-wrap:focus-within .portrait{transform:rotate(3deg) scale(1.04);}
 
   @media (prefers-reduced-motion:reduce){
     .portrait-dark{animation:none; opacity:0;}
@@ -56,7 +66,7 @@
     transition:opacity .35s ease;
   }
   .portrait-wrap:hover .portrait-credit,
-  .portrait-credit:focus-within{
+  .portrait-wrap:focus-within .portrait-credit{
     opacity:1;
     pointer-events:auto;
   }
