@@ -1,0 +1,97 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+  <line x1="5" y1="24" x2="5" y2="792"
+        stroke="#5d93d6"
+        stroke-width="1"
+        stroke-dasharray="1.5 3 9 3"/>
+
+  <g fill="none"
+     stroke="#eaf1f8"
+     stroke-width="1.5"
+     stroke-linecap="round"
+     stroke-linejoin="round">
+
+    <path d="M5 60 C 19 74 37 140 40 216
+             L 40 556
+             L 27 598
+             C 24 644 30 690 50 716
+             L 5 716"/>
+
+    <path d="M40 486
+             L 80 590
+             L 80 606
+             L 40 556"
+          fill="rgba(93,147,214,.18)"
+          stroke-width="1.3"/>
+
+    <circle cx="24" cy="360" r="11"/>
+  </g>
+
+  <g stroke="#5d93d6"
+     stroke-width="1"
+     stroke-dasharray="2 3"
+     fill="none">
+    <line x1="5" y1="216" x2="40" y2="216"/>
+    <line x1="5" y1="300" x2="40" y2="300"/>
+    <line x1="5" y1="430" x2="40" y2="430"/>
+    <line x1="5" y1="556" x2="40" y2="556"/>
+  </g>
+
+  <circle cx="24"
+          cy="360"
+          r="6"
+          fill="none"
+          stroke="#5d93d6"
+          stroke-width="1"/>
+
+  <g stroke="#5d93d6" stroke-width="0.8">
+    <line x1="13" y1="360" x2="35" y2="360"/>
+    <line x1="24" y1="349" x2="24" y2="371"/>
+
+    <line x1="20" y1="600" x2="13" y2="712"/>
+    <line x1="27" y1="600" x2="27" y2="714"/>
+    <line x1="34" y1="600" x2="42" y2="713"/>
+  </g>
+
+  <g fill="#eaf1f8">
+    <circle cx="36" cy="240" r="1.3"/>
+    <circle cx="36" cy="262" r="1.3"/>
+    <circle cx="36" cy="284" r="1.3"/>
+
+    <circle cx="36" cy="468" r="1.3"/>
+    <circle cx="36" cy="492" r="1.3"/>
+    <circle cx="36" cy="516" r="1.3"/>
+  </g>
+
+  <g stroke="#5d93d6"
+     stroke-width="0.9"
+     fill="none">
+    <line x1="70" y1="216" x2="70" y2="556"/>
+
+    <path d="M67 222 L70 215 L73 222"/>
+    <path d="M67 550 L70 557 L73 550"/>
+  </g>
+
+  <g fill="#5d93d6"
+     font-family="monospace">
+    <text x="80"
+          y="150"
+          font-size="8"
+          transform="rotate(-90 80 150)">
+      FIG. I — ASCENT
+    </text>
+
+    <text x="76"
+          y="398"
+          font-size="7.5"
+          transform="rotate(-90 76 398)">
+      ø 3.2
+    </text>
+
+    <text x="80"
+          y="690"
+          font-size="8"
+          transform="rotate(-90 80 690)">
+      UNIT R-2001
+    </text>
+  </g>
+</svg>

@@ -1,0 +1,54 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- one sideways mushroom, growing rightward from the origin -->
+  <defs>
+    <g id="ms">
+      <path d="M0 -2.2 L25 -1.6 M0 2.2 L25 1.6"
+            fill="none" stroke="#efe6f7" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M25 -13 C 37 -12 41 -6 41 0 C 41 6 37 12 25 13 Z"
+            fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.5"
+            stroke-linejoin="round"/>
+      <g stroke="#b98fd9" stroke-width="0.7" opacity="0.7" fill="none">
+        <path d="M25 -8 l 4 1 M25 0 l 5 0 M25 8 l 4 -1"/>
+      </g>
+      <g fill="#efe6f7">
+        <circle cx="33" cy="-4" r="1.5"/><circle cx="35" cy="4" r="1.2"/><circle cx="30" cy="-0.5" r="1"/>
+      </g>
+    </g>
+  </defs>
+
+  <!-- the ground is the left edge; a whole field grows out of it sideways -->
+  <line x1="2" y1="24" x2="2" y2="796"
+        stroke="#efe6f7" stroke-width="1.2"
+        stroke-dasharray="9 3 1.5 3"/>
+  <g stroke="#b98fd9" stroke-width="0.7" opacity="0.6">
+    <path d="M2 70 l 6 -2 M2 250 l 6 -2 M2 430 l 6 -2 M2 610 l 6 -2 M2 760 l 6 -2"/>
+  </g>
+
+  <!-- the field: mushrooms of various heights up the whole strip -->
+  <use href="#ms" transform="translate(2,82) scale(1.2) rotate(-4)"/>
+  <use href="#ms" transform="translate(2,150) scale(0.72) rotate(7)"/>
+  <use href="#ms" transform="translate(2,212) scale(1.0) rotate(-2)"/>
+  <use href="#ms" transform="translate(2,294) scale(1.4) rotate(3)"/>
+  <use href="#ms" transform="translate(2,360) scale(0.66) rotate(-8)"/>
+  <use href="#ms" transform="translate(2,430) scale(1.08) rotate(5)"/>
+  <use href="#ms" transform="translate(2,512) scale(0.82) rotate(-4)"/>
+  <use href="#ms" transform="translate(2,582) scale(1.28) rotate(4)"/>
+  <use href="#ms" transform="translate(2,662) scale(0.74) rotate(-7)"/>
+  <use href="#ms" transform="translate(2,734) scale(1.12) rotate(2)"/>
+
+  <!-- drifting spores -->
+  <g fill="#b98fd9">
+    <circle cx="60" cy="120" r="1.2"/>
+    <circle cx="72" cy="330" r="1.1"/>
+    <circle cx="66" cy="520" r="1.2"/>
+    <circle cx="74" cy="690" r="1"/>
+    <circle cx="58" cy="250" r="1"/>
+  </g>
+
+  <!-- annotations -->
+  <g fill="#b98fd9" font-family="monospace">
+    <text x="84" y="420" font-size="8" transform="rotate(-90 84 420)">FIG. V — FUNGI</text>
+    <text x="14" y="788" font-size="7.5">AMANITA R-05</text>
+  </g>
+</svg>

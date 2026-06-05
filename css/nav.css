@@ -1,0 +1,37 @@
+/* nav.css — the two page links that sit inside the figure-8 loop, one in each
+   lobe. The blob loops around them. They live inside #moving-bug (which is
+   pointer-events:none) so they re-enable pointer events themselves. */
+
+.loop-link{
+  position:absolute;
+  top:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;                       /* above the looping blob */
+  pointer-events:auto;
+  font-family:'Special Elite', monospace;
+  font-size:clamp(12px,1.15vw,15px);
+  letter-spacing:.02em;
+  white-space:nowrap;
+  color:var(--muted);
+  text-decoration:none;
+  padding:2px 2px;
+  transition:color .2s ease;
+}
+
+/* one link near the centre of each lobe of the ∞ */
+.loop-link--stories{left:22%;}
+.loop-link--about{left:78%;}
+
+.loop-link:hover,
+.loop-link:focus-visible{
+  color:var(--ink);
+  text-decoration:underline;
+  text-underline-offset:3px;
+}
+
+/* the page you're already on */
+.loop-link.is-current{
+  color:var(--ink);
+  border-bottom:1.5px solid currentColor;
+}
+.loop-link.is-current:hover{text-decoration:none;}

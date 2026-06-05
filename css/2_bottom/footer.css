@@ -1,0 +1,10 @@
+/* the site credit rides at the right end of the socials row (pushed over by
+   margin-left:auto). it lives inside .center, so it naturally stops before
+   the right-hand sidebar graphic. */
+.site-credit{
+  margin-left:auto;
+  color:var(--faint);
+  font-size:12px;
+  letter-spacing:.04em;
+  text-align:right;
+}

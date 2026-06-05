@@ -1,0 +1,8 @@
+  /* On real desktop heights, lock the whole site to the viewport (no scroll).
+     On short / small windows it falls back to natural scrolling flow above. */
+  @media (min-height:700px) and (min-width:760px){
+    body{overflow:hidden;}
+    .page{height:100vh;}
+    .catalog{flex:1 1 auto;}
+    .body{flex:1 1 auto; overflow:hidden;}
+  }

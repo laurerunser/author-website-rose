@@ -1,0 +1,77 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <!-- faint grid -->
+  <g stroke="#e8765e" stroke-width="0.6" opacity="0.4" stroke-dasharray="1.5 5">
+    <line x1="45" y1="470" x2="45" y2="700"/>
+    <line x1="6" y1="560" x2="84" y2="560"/>
+    <line x1="6" y1="650" x2="84" y2="650"/>
+  </g>
+
+  <!-- thick column down to ground zero -->
+  <path d="M37 440
+           C 35 520 33 600 32 662
+           C 31 692 28 712 26 726
+           L 64 726
+           C 62 712 59 692 58 662
+           C 57 600 55 520 53 440
+           C 48 448 42 448 37 440 Z"
+        fill="rgba(232,118,94,.13)"
+        stroke="#f7dcd2" stroke-width="1.6"
+        stroke-linecap="round" stroke-linejoin="round"/>
+
+  <!-- billow collar feeding the cap -->
+  <path d="M22 440 C 32 424 58 424 68 440 C 58 454 32 454 22 440 Z"
+        fill="rgba(232,118,94,.15)" stroke="#f7dcd2" stroke-width="1.2"/>
+
+  <!-- the cap: an enormous billowing head, mostly off-frame on every side;
+       only the recognisable mushroom top stays in view -->
+  <path d="M-36 410
+           C -48 300 -32 150 4 88
+           C -4 46 32 32 48 74
+           C 52 32 86 34 90 78
+           C 128 92 138 290 124 410
+           C 112 442 90 432 76 442
+           C 66 448 60 454 52 450
+           C 46 454 44 454 38 450
+           C 28 442 4 446 -12 438
+           C -26 432 -34 426 -36 410 Z"
+        fill="rgba(232,118,94,.17)"
+        stroke="#f7dcd2" stroke-width="1.8"
+        stroke-linejoin="round"/>
+
+  <!-- rolling billow bands across the cap -->
+  <g fill="none" stroke="#f7dcd2" stroke-width="0.9" opacity="0.6"
+     stroke-linecap="round">
+    <path d="M16 120 q 10 -6 20 0 q 10 6 20 0"/>
+    <path d="M6 184 q 12 -7 24 0 q 12 7 24 0 q 10 -6 18 0"/>
+    <path d="M-4 256 q 14 -8 28 0 q 14 8 28 0 q 14 -8 26 0"/>
+    <path d="M-10 330 q 16 -9 30 0 q 15 9 30 0 q 15 -9 30 0 q 12 7 20 3"/>
+  </g>
+
+  <!-- fireball glow at the heart -->
+  <circle cx="44" cy="340" r="9" fill="rgba(232,118,94,.5)" stroke="none"/>
+
+  <!-- updraft striations in the column -->
+  <g fill="none" stroke="#f7dcd2" stroke-width="0.7" opacity="0.5">
+    <path d="M40 470 C 38 540 38 620 37 686"/>
+    <path d="M50 470 C 52 540 52 620 53 686"/>
+    <path d="M45 486 C 44 560 44 640 44 700"/>
+  </g>
+
+  <!-- ground line + shock ring at ground zero (no city) -->
+  <line x1="4" y1="728" x2="86" y2="728"
+        stroke="#f7dcd2" stroke-width="1.2"
+        stroke-dasharray="9 3 1.5 3"/>
+  <g fill="none" stroke="#e8765e" stroke-width="0.9" opacity="0.7">
+    <path d="M4 738 C 22 726 32 726 45 734"/>
+    <path d="M86 738 C 68 726 58 726 45 734"/>
+  </g>
+
+  <!-- annotations -->
+  <g fill="#e8765e" font-family="monospace">
+    <text x="86" y="200" font-size="8" transform="rotate(-90 86 200)">FIG. IV — DETONATION</text>
+    <text x="74" y="600" font-size="7.5" transform="rotate(-90 74 600)">T + 09 s</text>
+    <text x="9" y="752" font-size="8.5">GROUND ZERO</text>
+    <text x="9" y="764" font-size="7">FAT MAN · 21 kt</text>
+  </g>
+</svg>

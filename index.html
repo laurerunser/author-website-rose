@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Rose Bertrand — Science-fiction & Fantasy Author</title>
+
+  <link rel="icon" href="images/original_portrait_background.png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=EB+Garamond:ital,wght@0,400;0,500;1,400&family=Special+Elite&display=swap"
+    rel="stylesheet"
+  >
+
+  <!-- foundation -->
+  <link rel="stylesheet" href="css/variables.css?v=2">
+  <link rel="stylesheet" href="css/layout.css?v=3">
+  <link rel="stylesheet" href="css/sidebars.css?v=2">
+
+  <!-- top -->
+  <link rel="stylesheet" href="css/0_top/portrait.css?v=4">
+  <link rel="stylesheet" href="css/0_top/stamp.css?v=2">
+
+  <!-- middle -->
+  <link rel="stylesheet" href="css/1_middle/cards.css?v=3">
+
+  <!-- bottom -->
+  <link rel="stylesheet" href="css/2_bottom/socials.css?v=2">
+  <link rel="stylesheet" href="css/2_bottom/footer.css?v=3">
+
+  <!-- moving bug + loop nav -->
+  <link rel="stylesheet" href="css/moving_bug.css?v=6">
+  <link rel="stylesheet" href="css/nav.css?v=1">
+
+  <!-- always last -->
+  <link rel="stylesheet" href="css/mobile.css?v=2">
+</head>
+
+
+<body> 
+    <main class="page">
+
+  <aside class="rail rail--left" aria-hidden="true">
+    <img id="rail-left" src="components/01_blue/spaceship.svg?v=2" alt="">
+  </aside>
+
+  <section class="center">
+
+    <header class="head">
+
+      <div class="stamp">
+        No. 2001<br>
+        Paris · FR<br>
+        ★ author ★
+      </div>
+
+      <div class="intro">
+        <h1 class="name">Rose Bertrand</h1>
+        <div class="tagline">
+          Science-fiction &amp; fantasy author
+        </div>
+        <p class="blurb">
+          A shelf of short fiction and works in progress — pick a tab below to start reading.
+        </p>
+      </div>
+
+      <nav class="moving-bug" id="moving-bug" aria-label="Pages">
+        <a class="loop-link loop-link--stories is-current" href="index.html">my stories</a>
+        <a class="loop-link loop-link--about" href="about.html">about me</a>
+      </nav>
+
+      <div class="portrait-wrap">
+        <div class="portrait">
+          <img
+            class="portrait-img portrait-light"
+            id="portrait-light"
+            src="images/portraits/01_light_blue.png"
+            alt="Portrait of Rose Bertrand">
+          <img
+            class="portrait-img portrait-dark"
+            id="portrait-dark"
+            src="images/portraits/01_dark_blue.png"
+            alt=""
+            aria-hidden="true">
+        </div>
+
+        <svg
+          class="portrait-credit"
+          viewBox="0 0 220 220"
+          role="img"
+          aria-label="Portrait by the wonderful thanh.illustrates">
+          <defs>
+            <path id="portrait-credit-arc" d="M30 110 A80 80 0 0 0 190 110"/>
+          </defs>
+          <circle
+            class="pc-hit"
+            cx="110" cy="110" r="84"
+            fill="transparent"
+            pointer-events="all"/>
+          <text
+            text-anchor="middle"
+            font-size="8"
+            letter-spacing="0.5">
+            <textPath href="#portrait-credit-arc" startOffset="50%">portrait by the wonderful <a
+              href="https://www.instagram.com/thanh.illustrates/"
+              target="_blank"
+              rel="noopener noreferrer">thanh.illustrates</a></textPath>
+          </text>
+        </svg>
+      </div>
+
+    </header>
+
+    <div class="catalog">
+
+      <div
+        class="tabs"
+        id="tabs"
+        role="tablist">
+      </div>
+
+      <div
+        class="body"
+        id="body">
+
+        <span
+          class="hole"
+          aria-hidden="true">
+        </span>
+
+        <div
+          class="story"
+          id="story">
+        </div>
+
+      </div>
+
+    </div>
+
+    <footer class="socials">
+
+      <span class="find">
+        Find me —
+      </span>
+
+      <a
+        class="social"
+        href="https://substack.com/@technofables">
+
+        <span class="star">✶</span>
+        <span class="nm">Substack</span>
+        <span class="hd">technofables</span>
+
+      </a>
+
+      <a
+        class="social"
+        href="https://instagram.com/rose.technofables">
+
+        <span class="star">✶</span>
+        <span class="nm">Instagram</span>
+        <span class="hd">@rose.technofables</span>
+
+      </a>
+
+      <a
+        class="social"
+        href="https://threads.net/@rose.technofables">
+
+        <span class="star">✶</span>
+        <span class="nm">Threads</span>
+        <span class="hd">@rose.technofables</span>
+
+      </a>
+
+      <span class="site-credit">made with my little hands and no AI · last updated June 2026</span>
+
+    </footer>
+
+  </section>
+
+  <aside class="rail rail--right" aria-hidden="true">
+    <img id="rail-right" src="components/01_blue/starchart.svg?v=2" alt="">
+  </aside>
+
+</main>
+
+<script src="js/stories.js?v=6"></script>
+<script src="js/moving_bug.js?v=6"></script>
+</body>
+
+</html>
