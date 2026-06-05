@@ -1,18 +1,10 @@
-/* small credit pinned to the bottom-right of the screen.
-   position:fixed keeps it visible even though the desktop layout
-   locks the page to 100vh with overflow:hidden. */
+/* the site credit rides at the right end of the socials row (pushed over by
+   margin-left:auto). it lives inside .center, so it naturally stops before
+   the right-hand sidebar graphic. */
 .site-credit{
-  position:fixed;
-  right:14px;
-  bottom:10px;
-  margin:0;
-  z-index:5;
-  font-family:'Special Elite', monospace;
-  font-size:11px;
-  letter-spacing:.04em;
+  margin-left:auto;
   color:var(--faint);
+  font-size:12px;
+  letter-spacing:.04em;
   text-align:right;
-  pointer-events:none;
 }
-
-.site-credit p{margin:0;}

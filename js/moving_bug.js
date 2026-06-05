@@ -75,16 +75,13 @@
     if (bug.dataset.theme === theme) return;
     bug.innerHTML = ICONS[theme] || ICONS.blue;
     bug.dataset.theme = theme;
-    applyFacing(theme);
-  }
-
-  function bounds() {
-    var bw = bug.offsetWidth || 40;
-    var bh = bug.offsetHeight || 40;
-    return {
-      maxX: Math.max(0, host.clientWidth - bw),
-      maxY: Math.max(0, host.clientHeight - bh)
-    };
+    var svg = bug.firstElementChild;
+    var f = FACING[theme] || FACING.blue;
+    // rotation tracks the path each frame (no transition); the left/right
+    // flip eases its turn-around; the blob is left to its own wobble
+    if (svg) svg.style.transition = (f.mode === "flip") ? "transform .25s ease" : "none";
+    flipSign = 0;
+    faceAlong(lastVx, lastVy);
   }
 
   // how each icon faces its heading. 'rotate' spins to the direction of
@@ -99,45 +96,41 @@
     purple: { mode: "none" }               // blob
   };
 
-  var x = 0, y = 0;
-  var lastDx = 0, lastDy = -1; // start pointing the way the art is drawn
-
-  // turn the icon to face where it's going (applied to the inner svg so it
-  // composes with the slow drift translate on .bug)
-  function applyFacing(theme) {
+  // turn the icon toward its current heading (vx, vy), applied to the inner
+  // svg so it composes with the position transform on .bug
+  var lastVx = 1, lastVy = 0, flipSign = 0;
+  function faceAlong(vx, vy) {
+    lastVx = vx;
+    lastVy = vy;
     var svg = bug.firstElementChild;
     if (!svg) return;
-    var f = FACING[theme] || FACING.blue;
+    var f = FACING[bug.dataset.theme] || FACING.blue;
     if (f.mode === "rotate") {
-      var ang = Math.atan2(lastDy, lastDx) * 180 / Math.PI;
+      var ang = Math.atan2(vy, vx) * 180 / Math.PI;
       svg.style.transform = "rotate(" + (ang - f.base).toFixed(1) + "deg)";
     } else if (f.mode === "flip") {
-      svg.style.transform = "scaleX(" + (lastDx < 0 ? -1 : 1) + ")";
-    } else {
-      svg.style.transform = "";
+      var s = vx < 0 ? -1 : 1;
+      if (s !== flipSign) {
+        flipSign = s;
+        svg.style.transform = "scaleX(" + s + ")";
+      }
     }
   }
 
-  function moveTo(px, py, durMs) {
-    x = px;
-    y = py;
-    bug.style.transitionDuration = (durMs / 1000) + "s";
-    bug.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+  // geometry of the figure-8 (recomputed on resize): the bug's centre traces
+  // a lemniscate that fills the empty header space — x = A·sin t, y = H·sin 2t
+  var geo = { A: 8, cy: 0, H: 6 };
+  function computeGeo() {
+    var bw = bug.offsetWidth || 40;
+    var bh = bug.offsetHeight || 40;
+    geo.A = Math.max(8, (host.clientWidth - bw) / 2);
+    geo.cy = Math.max(0, (host.clientHeight - bh) / 2);
+    geo.H = Math.max(6, Math.min(geo.cy, geo.A * 0.5)); // keep a wide ∞ shape
   }
 
-  // pick a new gentle, slow waypoint and return how long until the next hop
-  function drift() {
-    var b = bounds();
-    var nx = Math.random() * b.maxX;
-    var ny = Math.random() * b.maxY;
-    lastDx = nx - x;
-    lastDy = ny - y;
-    applyFacing(bug.dataset.theme);
-    var dur = 3500 + Math.random() * 3500; // 3.5–7s per glide
-    moveTo(nx, ny, dur);
-    return dur + 500 + Math.random() * 1500; // pause a beat, then glide again
-  }
-
+  computeGeo();
+  lastVx = geo.A;       // t = 0 heading, so the icon starts facing the way
+  lastVy = 2 * geo.H;   // it sets off
   setIcon(themeNow());
 
   // swap the icon whenever the active tab (body[data-theme]) changes
@@ -146,32 +139,31 @@
     obs.observe(document.body, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
+  window.addEventListener("resize", computeGeo);
+  bug.style.transition = "none"; // position is driven frame-by-frame
+
   if (reduceMotion) {
-    var b0 = bounds();
-    bug.style.transform = "translate(" + (b0.maxX / 2).toFixed(1) + "px," + (b0.maxY / 2).toFixed(1) + "px)";
+    bug.style.transform = "translate(" + geo.A.toFixed(1) + "px," + geo.cy.toFixed(1) + "px)";
     return;
   }
 
-  // start somewhere random without animating, then begin drifting
-  var start = bounds();
-  bug.style.transitionDuration = "0s";
-  x = Math.random() * start.maxX;
-  y = Math.random() * start.maxY;
-  bug.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
+  // glide continuously along the figure-8 — no pauses, no slowing to a stop
+  var t = 0;
+  var lastTs = null;
+  var PERIOD = 18; // seconds for one full ∞ loop
+  function frame(ts) {
+    if (lastTs === null) lastTs = ts;
+    var dt = Math.min(0.05, (ts - lastTs) / 1000); // clamp gaps (e.g. tab away)
+    lastTs = ts;
+    t += (2 * Math.PI / PERIOD) * dt;
+    if (t > 2 * Math.PI) t -= 2 * Math.PI;
 
-  requestAnimationFrame(function () {
-    (function loop() {
-      var wait = drift();
-      setTimeout(loop, wait);
-    })();
-  });
+    bug.style.transform =
+      "translate(" + (geo.A * (1 + Math.sin(t))).toFixed(1) + "px," +
+      (geo.cy + geo.H * Math.sin(2 * t)).toFixed(1) + "px)";
 
-  // keep the creature inside the box if the window resizes
-  window.addEventListener("resize", function () {
-    var b = bounds();
-    x = Math.min(x, b.maxX);
-    y = Math.min(y, b.maxY);
-    bug.style.transitionDuration = "0.6s";
-    bug.style.transform = "translate(" + x.toFixed(1) + "px," + y.toFixed(1) + "px)";
-  });
+    faceAlong(geo.A * Math.cos(t), 2 * geo.H * Math.cos(2 * t));
+    requestAnimationFrame(frame);
+  }
+  requestAnimationFrame(frame);
 })();
