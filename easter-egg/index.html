@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>FIG. II · a small secret — Rose Bertrand</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="../images/original_portrait_background.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="../css/easter-egg.css?v=1">
+</head>
+
+<body>
+
+  <!-- always available, even before the drawing assembles -->
+  <a class="back" href="../index.html"><span class="arr" aria-hidden="true">←</span>back</a>
+
+  <p class="hint">move your cursor to draft the ship</p>
+
+  <!-- the drafting crosshair that tracks the cursor -->
+  <div class="xhair" aria-hidden="true">
+    <span class="xhair-v"></span>
+    <span class="xhair-h"></span>
+    <span class="xhair-dot"></span>
+  </div>
+
+  <!-- the orbital-station blueprint is fetched + injected here -->
+  <div class="sheet" id="sheet" role="img"
+       aria-label="A blueprint of an orbital station with two stacked habitat rings, assembled as you move the cursor."></div>
+
+  <!-- assembly read-out -->
+  <div class="readout" aria-hidden="true">
+    <div class="row">
+      <span>Assembly</span>
+      <span class="bar"><span class="bar-fill"></span></span>
+      <span class="pct">0%</span>
+    </div>
+  </div>
+
+  <!-- drawing title block -->
+  <div class="cartouche" aria-hidden="true">
+    <div class="tb-head">Rose Bertrand · orbital drawing office</div>
+    <div class="tb-title">Gyroscopic Habitat Station</div>
+    <div class="tb-grid">
+      <div class="tb-cell"><b>DWG No.</b>R-2001</div>
+      <div class="tb-cell"><b>Scale</b>1:2000</div>
+      <div class="tb-cell"><b>Drawn</b>R.B.</div>
+    </div>
+  </div>
+
+  <script src="../js/easter-egg.js?v=1"></script>
+</body>
+
+</html>
