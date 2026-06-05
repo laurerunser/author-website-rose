@@ -3,6 +3,13 @@
     border:3px double var(--red); color:var(--red); padding:8px 13px; border-radius:4px;
     font-family:'Special Elite',monospace; font-size:clamp(10px,.9vw,12.5px);
     text-transform:uppercase; letter-spacing:.12em; text-align:center; line-height:1.4;
-    transition:transform .25s ease; cursor:default; user-select:none;
+    transition:transform .25s ease, color .3s ease, border-color .3s ease; cursor:default; user-select:none;
   }
   .stamp:hover{transform:rotate(-4deg) scale(1.04);}
+
+  /* the stamp echoes the active tab's number colour (set via [data-theme] on body) */
+  [data-theme="blue"]   .stamp{color:var(--num-blue);   border-color:var(--num-blue);}
+  [data-theme="green"]  .stamp{color:var(--num-green);  border-color:var(--num-green);}
+  [data-theme="yellow"] .stamp{color:var(--num-yellow); border-color:var(--num-yellow);}
+  [data-theme="red"]    .stamp{color:var(--num-red);    border-color:var(--num-red);}
+  [data-theme="purple"] .stamp{color:var(--num-purple); border-color:var(--num-purple);}
