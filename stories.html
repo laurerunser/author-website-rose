@@ -42,7 +42,12 @@
 </head>
 
 
-<body> 
+<body
+  data-page="stories"
+  data-blurb="A shelf of short fiction and works in progress — pick a tab below to start reading."
+  data-portrait-light="images/portraits/01_light_blue.webp"
+  data-portrait-dark="images/portraits/01_dark_blue.webp"
+  data-scripts="js/stories.js?v=7,js/moving_bug.js?v=9">
     <main class="page">
 
   <aside class="rail rail--left" aria-hidden="true">
@@ -51,73 +56,7 @@
 
   <section class="center">
 
-    <header class="head">
-
-      <div class="stamp">
-        No. 2001<br>
-        Paris · FR<br>
-        ★ author ★
-      </div>
-
-      <div class="intro">
-        <h1 class="name">Rose Bertrand</h1>
-        <div class="tagline">
-          Science-fiction &amp; fantasy author
-        </div>
-        <p class="blurb">
-          A shelf of short fiction and works in progress — pick a tab below to start reading.
-        </p>
-      </div>
-
-      <nav class="moving-bug" id="moving-bug" aria-label="Pages">
-        <a class="loop-link loop-link--about" href="index.html">about me</a>
-        <span class="loop-sep loop-sep--1" aria-hidden="true">*</span>
-        <a class="loop-link loop-link--stories is-current" href="stories.html">stories</a>
-        <span class="loop-sep loop-sep--2" aria-hidden="true">*</span>
-        <a class="loop-link loop-link--nonfic" href="nonfiction.html">nonfiction</a>
-      </nav>
-
-      <div class="portrait-wrap" tabindex="0">
-        <div class="portrait">
-          <img
-            class="portrait-img portrait-light"
-            id="portrait-light"
-            src="images/portraits/01_light_blue.webp"
-            alt="Portrait of Rose Bertrand">
-          <img
-            class="portrait-img portrait-dark"
-            id="portrait-dark"
-            src="images/portraits/01_dark_blue.webp"
-            alt=""
-            aria-hidden="true">
-        </div>
-
-        <svg
-          class="portrait-credit"
-          viewBox="0 0 220 220"
-          role="img"
-          aria-label="Portrait by thanh.illustrates">
-          <defs>
-            <path id="portrait-credit-arc" d="M30 110 A80 80 0 0 1 150 41"/>
-          </defs>
-          <circle
-            class="pc-hit"
-            cx="110" cy="110" r="84"
-            fill="transparent"
-            pointer-events="all"/>
-          <text
-            text-anchor="middle"
-            font-size="8"
-            letter-spacing="0.5">
-            <textPath href="#portrait-credit-arc" startOffset="50%">by <a
-              href="https://www.instagram.com/thanh.illustrates/"
-              target="_blank"
-              rel="noopener noreferrer">thanh.illustrates</a></textPath>
-          </text>
-        </svg>
-      </div>
-
-    </header>
+    <div id="site-header"></div>
 
     <div class="catalog">
 
@@ -145,45 +84,7 @@
 
     </div>
 
-    <footer class="socials">
-
-      <span class="find">
-        Find me —
-      </span>
-
-      <a
-        class="social"
-        href="https://substack.com/@technofables">
-
-        <span class="star">✶</span>
-        <span class="nm">Substack</span>
-        <span class="hd">technofables</span>
-
-      </a>
-
-      <a
-        class="social"
-        href="https://instagram.com/rose.technofables">
-
-        <span class="star">✶</span>
-        <span class="nm">Instagram</span>
-        <span class="hd">@rose.technofables</span>
-
-      </a>
-
-      <a
-        class="social"
-        href="https://threads.net/@rose.technofables">
-
-        <span class="star">✶</span>
-        <span class="nm">Threads</span>
-        <span class="hd">@rose.technofables</span>
-
-      </a>
-
-      <span class="site-credit">made with my little hands and no AI · last updated June 2026</span>
-
-    </footer>
+    <div id="site-footer"></div>
 
   </section>
 
@@ -193,8 +94,7 @@
 
 </main>
 
-<script src="js/stories.js?v=7"></script>
-<script src="js/moving_bug.js?v=9"></script>
+<script src="js/include.js?v=1"></script>
 </body>
 
 </html>
