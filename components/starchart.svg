@@ -1,0 +1,129 @@
+<svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
+
+  <g stroke="#5d93d6"
+     stroke-width="0.5"
+     opacity="0.45">
+
+    <line x1="22" y1="20" x2="22" y2="800" stroke-dasharray="1 5"/>
+    <line x1="45" y1="20" x2="45" y2="800" stroke-dasharray="1 5"/>
+    <line x1="68" y1="20" x2="68" y2="800" stroke-dasharray="1 5"/>
+
+    <line x1="6" y1="150" x2="84" y2="150" stroke-dasharray="1 5"/>
+    <line x1="6" y1="300" x2="84" y2="300" stroke-dasharray="1 5"/>
+    <line x1="6" y1="450" x2="84" y2="450" stroke-dasharray="1 5"/>
+    <line x1="6" y1="600" x2="84" y2="600" stroke-dasharray="1 5"/>
+    <line x1="6" y1="730" x2="84" y2="730" stroke-dasharray="1 5"/>
+  </g>
+
+  <path d="M4 200
+           C 38 280 50 470 86 590"
+        fill="none"
+        stroke="#5d93d6"
+        stroke-width="1"
+        stroke-dasharray="4 4"
+        opacity="0.7"/>
+
+  <g fill="none"
+     stroke="#5d93d6"
+     stroke-width="1"
+     opacity="0.85">
+
+    <circle cx="45" cy="400" r="26"/>
+    <circle cx="45" cy="400" r="44"/>
+
+    <g stroke-width="0.8">
+      <line x1="45" y1="356" x2="45" y2="350"/>
+      <line x1="45" y1="444" x2="45" y2="450"/>
+
+      <line x1="1" y1="400" x2="7" y2="400"/>
+      <line x1="89" y1="400" x2="83" y2="400"/>
+    </g>
+  </g>
+
+  <polyline points="60,130 52,330 50,520 40,620 60,670"
+            fill="none"
+            stroke="#5d93d6"
+            stroke-width="1"
+            opacity="0.85"/>
+
+  <polyline points="52,330 66,430"
+            fill="none"
+            stroke="#5d93d6"
+            stroke-width="1"
+            opacity="0.85"/>
+
+  <g fill="#eaf1f8">
+    <circle cx="30" cy="90" r="1.6"/>
+    <circle cx="60" cy="130" r="2.6"/>
+    <circle cx="44" cy="200" r="1.2"/>
+
+    <circle cx="70" cy="250" r="2"/>
+    <circle cx="22" cy="300" r="1.4"/>
+    <circle cx="52" cy="330" r="3"/>
+
+    <circle cx="38" cy="400" r="1.6"/>
+    <circle cx="66" cy="430" r="2.2"/>
+    <circle cx="28" cy="470" r="1.3"/>
+
+    <circle cx="50" cy="520" r="2.7"/>
+    <circle cx="72" cy="560" r="1.5"/>
+    <circle cx="40" cy="620" r="2"/>
+
+    <circle cx="60" cy="670" r="1.4"/>
+    <circle cx="30" cy="710" r="2.4"/>
+    <circle cx="54" cy="760" r="1.6"/>
+  </g>
+
+  <g stroke="#eaf1f8"
+     stroke-width="0.8"
+     opacity="0.9">
+
+    <line x1="60" y1="122" x2="60" y2="138"/>
+    <line x1="52" y1="130" x2="68" y2="130"/>
+
+    <line x1="52" y1="321" x2="52" y2="339"/>
+    <line x1="43" y1="330" x2="61" y2="330"/>
+
+    <line x1="50" y1="511" x2="50" y2="529"/>
+    <line x1="41" y1="520" x2="59" y2="520"/>
+
+    <line x1="30" y1="702" x2="30" y2="718"/>
+    <line x1="22" y1="710" x2="38" y2="710"/>
+  </g>
+
+  <g fill="#5d93d6"
+     font-family="monospace"
+     font-size="7">
+    <text x="64" y="126">α</text>
+    <text x="56" y="326">β</text>
+    <text x="54" y="516">γ</text>
+    <text x="44" y="616">δ</text>
+  </g>
+
+  <text x="86"
+        y="430"
+        fill="#5d93d6"
+        font-family="monospace"
+        font-size="7.5"
+        transform="rotate(-90 86 430)">
+    CHART · DEC +30°
+  </text>
+
+  <g transform="translate(45,775)"
+     fill="none"
+     stroke="#5d93d6"
+     stroke-width="0.9">
+    <circle r="9"/>
+    <line x1="0" y1="-12" x2="0" y2="12"/>
+    <line x1="-12" y1="0" x2="12" y2="0"/>
+  </g>
+
+  <text x="48"
+        y="757"
+        fill="#eaf1f8"
+        font-family="monospace"
+        font-size="6.5">
+    N
+  </text>
+
+</svg>
