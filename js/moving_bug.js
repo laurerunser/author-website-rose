@@ -125,7 +125,7 @@
     var bh = bug.offsetHeight || 40;
     geo.A = Math.max(8, (host.clientWidth - bw) / 2);
     geo.cy = Math.max(0, (host.clientHeight - bh) / 2);
-    geo.H = Math.max(6, Math.min(geo.cy, geo.A * 0.5)); // keep a wide ∞ shape
+    geo.H = Math.max(6, Math.min(geo.cy, geo.A * 0.3)); // wide, flat ∞ (not two circles)
   }
 
   computeGeo();

@@ -4,7 +4,7 @@
    js/moving_bug.js. Purely decorative (aria-hidden, no pointer events). */
 
 .moving-bug{
-  flex:1 1 auto;
+  flex:2 1 auto;
   min-width:0;
   align-self:stretch;
   position:relative;
