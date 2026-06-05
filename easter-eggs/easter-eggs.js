@@ -10,8 +10,9 @@
   "use strict";
 
   var TAB_EGGS = [
-    { page: "stories", theme: "blue", href: "easter-eggs/fiction/01_orbital_station.html" }
-    // , { page: "stories", theme: "green", href: "easter-eggs/fiction/02_some-other-egg.html" }
+    { page: "stories", theme: "blue",   href: "easter-eggs/fiction/01_orbital_station.html" },
+    { page: "stories", theme: "green",  href: "easter-eggs/fiction/02_barnacle_goose.html" },
+    { page: "stories", theme: "purple", href: "easter-eggs/fiction/05_sheep_plush.html" }
     // , { page: "nonfic",  theme: "sepia", href: "..." }
   ];
 

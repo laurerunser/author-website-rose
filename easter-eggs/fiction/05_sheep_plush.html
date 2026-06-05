@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Sheep · a small secret — Rose Bertrand</title>
+  <meta name="robots" content="noindex">
+
+  <link rel="icon" href="../../images/original_portrait_background.webp">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Special+Elite&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="05_sheep_plush.css?v=1">
+</head>
+
+<body>
+
+  <!-- always available, even before the drawing assembles -->
+  <a class="back" href="../../index.html"><span class="arr" aria-hidden="true">←</span>back</a>
+
+  <p class="hint">move your cursor to draft the sheep</p>
+
+  <!-- the drafting crosshair that tracks the cursor -->
+  <div class="xhair" aria-hidden="true">
+    <span class="xhair-v"></span>
+    <span class="xhair-h"></span>
+    <span class="xhair-dot"></span>
+  </div>
+
+  <!-- the two-panel sheep plate is fetched + injected here -->
+  <div class="sheet" id="sheet" role="img"
+       aria-label="A two-panel plate. On the left, a live sheep (Ovis aries) drawn in lateral view with its anatomy labelled, a magnified wool staple, and vital-statistics cards. On the right, a schematic of a sheep plushie showing its seams, stuffing and two button eyes — the right eye deliberately aimed the wrong way, flagged by a quality-control stamp — assembled as you move the cursor."></div>
+
+  <!-- assembly read-out -->
+  <div class="readout" aria-hidden="true">
+    <div class="row">
+      <span>Assembly</span>
+      <span class="bar"><span class="bar-fill"></span></span>
+      <span class="pct">0%</span>
+    </div>
+  </div>
+
+  <!-- drawing title block -->
+  <div class="cartouche" aria-hidden="true">
+    <div class="tb-head">Rose Bertrand · toy workshop</div>
+    <div class="tb-title">Sheep — live &amp; plush</div>
+    <div class="tb-grid">
+      <div class="tb-cell"><b>Spec</b>Ovis aries</div>
+      <div class="tb-cell"><b>Plate</b>V</div>
+      <div class="tb-cell"><b>Drawn</b>R.B.</div>
+    </div>
+  </div>
+
+  <script src="05_sheep_plush.js?v=1"></script>
+</body>
+
+</html>

@@ -27,7 +27,7 @@
   // loaded once, then left running — this is what keeps the blob alive.
   // easter-eggs.js (window.tabEggFor) must run before moving_bug.js so the
   // blob can wire up its click-to-open-egg on the right tab; they load in order.
-  var PERSIST = ["easter-eggs/easter-eggs.js?v=1", "easter-eggs/moving_bug/moving_bug.js?v=11"];
+  var PERSIST = ["easter-eggs/easter-eggs.js?v=2", "easter-eggs/moving_bug/moving_bug.js?v=11"];
   var FADE = 220;
 
   function $(s) { return document.querySelector(s); }
