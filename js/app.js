@@ -46,7 +46,11 @@
   function routeOfHref(href) { if (!href) return null; var f = href.split("/").pop().split("?")[0]; for (var k in ROUTES) if (ROUTES[k].file === f) return k; return null; }
 
   function inject(id, url) {
-    return fetch(url).then(function (r) { return r.text(); }).then(function (html) {
+    return fetch(url).then(function (r) {
+      if (!r.ok) return null;        // never splat a 404 page into the placeholder
+      return r.text();
+    }).then(function (html) {
+      if (html == null) return;
       var el = document.getElementById(id);
       if (el) el.outerHTML = html;   // replace placeholder so .head/.socials stay direct flex children
     });
@@ -145,8 +149,8 @@
   window.addEventListener("hashchange", function () { var p = parseHash(); navigate(p.route, p.tab); });
 
   Promise.all([
-    inject("site-header", "components/header.html"),
-    inject("site-footer", "components/footer.html")
+    inject("site-header", "header.html"),
+    inject("site-footer", "footer.html")
   ]).then(function () {
     PERSIST.reduce(function (p, src) {     // start the blob, once and for all (in order)
       return p.then(function () { return loadScript(src); });
