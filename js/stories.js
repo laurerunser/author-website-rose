@@ -50,7 +50,7 @@ const STORIES = [
   {
     tab:"04",
     theme:"red",
-    left:"components/04_red/mushroom-cloud.svg?v=2",
+    left:"components/04_red/mushroom-cloud.svg?v=3",
     right:"components/04_red/airplanes.svg?v=2",
     portraitLight:"images/portraits/04_light_red.png",
     portraitDark:"images/portraits/04_dark_red.png",
@@ -67,7 +67,7 @@ const STORIES = [
     tab:"05",
     theme:"purple",
     left:"components/05_purple/constellations.svg?v=2",
-    right:"components/05_purple/mushrooms.svg?v=2",
+    right:"components/05_purple/mushrooms.svg?v=3",
     portraitLight:"images/portraits/05_light_lilac.png",
     portraitDark:"images/portraits/05_dark_purple.png",
     label:"Telegrams from the Belt",

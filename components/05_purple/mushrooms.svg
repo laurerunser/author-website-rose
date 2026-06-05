@@ -1,91 +1,54 @@
 <svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
 
-  <!-- faint plot grid -->
-  <g stroke="#b98fd9" stroke-width="0.6" opacity="0.35" stroke-dasharray="1.5 5">
-    <line x1="45" y1="560" x2="45" y2="744"/>
-    <line x1="6" y1="620" x2="84" y2="620"/>
-    <line x1="6" y1="700" x2="84" y2="700"/>
-  </g>
+  <!-- one sideways mushroom, growing rightward from the origin -->
+  <defs>
+    <g id="ms">
+      <path d="M0 -2.2 L25 -1.6 M0 2.2 L25 1.6"
+            fill="none" stroke="#efe6f7" stroke-width="1.4" stroke-linecap="round"/>
+      <path d="M25 -13 C 37 -12 41 -6 41 0 C 41 6 37 12 25 13 Z"
+            fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.5"
+            stroke-linejoin="round"/>
+      <g stroke="#b98fd9" stroke-width="0.7" opacity="0.7" fill="none">
+        <path d="M25 -8 l 4 1 M25 0 l 5 0 M25 8 l 4 -1"/>
+      </g>
+      <g fill="#efe6f7">
+        <circle cx="33" cy="-4" r="1.5"/><circle cx="35" cy="4" r="1.2"/><circle cx="30" cy="-0.5" r="1"/>
+      </g>
+    </g>
+  </defs>
 
-  <!-- spores drifting up off the caps -->
-  <g fill="#b98fd9">
-    <circle cx="40" cy="560" r="1.2"/>
-    <circle cx="58" cy="600" r="1.4"/>
-    <circle cx="34" cy="640" r="1"/>
-    <circle cx="66" cy="660" r="1.2"/>
-    <circle cx="48" cy="500" r="1"/>
-    <circle cx="26" cy="600" r="1"/>
-  </g>
-
-  <!-- ===== tall centre mushroom ===== -->
-  <path d="M40 754 C 39 700 40 650 42 602 C 44 598 48 598 50 602 C 52 650 53 700 52 754"
-        fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.5"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M26 600 C 26 576 40 562 46 562 C 52 562 66 576 66 600
-           C 58 606 52 602 46 604 C 40 602 34 606 26 600 Z"
-        fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.6"
-        stroke-linejoin="round"/>
-  <g fill="#efe6f7">
-    <circle cx="38" cy="584" r="2"/><circle cx="50" cy="580" r="2.3"/>
-    <circle cx="46" cy="594" r="1.6"/><circle cx="58" cy="590" r="1.6"/>
-  </g>
-  <g stroke="#b98fd9" stroke-width="0.7" opacity="0.7">
-    <line x1="34" y1="602" x2="33" y2="610"/>
-    <line x1="42" y1="604" x2="42" y2="612"/>
-    <line x1="50" y1="604" x2="50" y2="612"/>
-    <line x1="58" y1="602" x2="59" y2="610"/>
-  </g>
-
-  <!-- ===== left mushroom ===== -->
-  <path d="M22 756 C 21 712 22 678 24 654 C 26 651 29 651 30 654 C 32 678 33 712 32 756"
-        fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.4"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M12 652 C 12 634 22 624 27 624 C 32 624 42 634 42 652
-           C 35 657 30 653 27 655 C 24 653 19 657 12 652 Z"
-        fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <g fill="#efe6f7">
-    <circle cx="21" cy="639" r="1.7"/><circle cx="31" cy="636" r="1.7"/>
-    <circle cx="27" cy="646" r="1.3"/>
-  </g>
-
-  <!-- ===== right mushroom ===== -->
-  <path d="M62 756 C 61 716 62 686 64 666 C 66 663 69 663 70 666 C 72 686 73 716 72 756"
-        fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.4"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M53 664 C 53 648 62 639 67 639 C 72 639 81 648 81 664
-           C 75 669 70 665 67 667 C 64 665 59 669 53 664 Z"
-        fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.5"
-        stroke-linejoin="round"/>
-  <g fill="#efe6f7">
-    <circle cx="61" cy="652" r="1.6"/><circle cx="71" cy="650" r="1.6"/>
-    <circle cx="67" cy="659" r="1.2"/>
-  </g>
-
-  <!-- ===== little mushroom ===== -->
-  <path d="M44 758 C 43 730 44 712 45 700 C 46 698 48 698 49 700 C 50 712 51 730 50 758"
-        fill="rgba(185,143,217,.12)" stroke="#efe6f7" stroke-width="1.2"
-        stroke-linecap="round" stroke-linejoin="round"/>
-  <path d="M38 700 C 38 688 44 682 47 682 C 50 682 56 688 56 700
-           C 51 704 48 701 47 702 C 46 701 43 704 38 700 Z"
-        fill="rgba(185,143,217,.18)" stroke="#efe6f7" stroke-width="1.3"
-        stroke-linejoin="round"/>
-  <g fill="#efe6f7">
-    <circle cx="44" cy="692" r="1.3"/><circle cx="50" cy="692" r="1.2"/>
-  </g>
-
-  <!-- ground -->
-  <line x1="6" y1="758" x2="84" y2="758"
+  <!-- the ground is the left edge; a whole field grows out of it sideways -->
+  <line x1="2" y1="24" x2="2" y2="796"
         stroke="#efe6f7" stroke-width="1.2"
         stroke-dasharray="9 3 1.5 3"/>
-  <g fill="none" stroke="#b98fd9" stroke-width="0.7" opacity="0.7">
-    <path d="M12 766 q 6 -6 12 0"/>
-    <path d="M64 766 q 6 -6 12 0"/>
+  <g stroke="#b98fd9" stroke-width="0.7" opacity="0.6">
+    <path d="M2 70 l 6 -2 M2 250 l 6 -2 M2 430 l 6 -2 M2 610 l 6 -2 M2 760 l 6 -2"/>
+  </g>
+
+  <!-- the field: mushrooms of various heights up the whole strip -->
+  <use href="#ms" transform="translate(2,82) scale(1.2) rotate(-4)"/>
+  <use href="#ms" transform="translate(2,150) scale(0.72) rotate(7)"/>
+  <use href="#ms" transform="translate(2,212) scale(1.0) rotate(-2)"/>
+  <use href="#ms" transform="translate(2,294) scale(1.4) rotate(3)"/>
+  <use href="#ms" transform="translate(2,360) scale(0.66) rotate(-8)"/>
+  <use href="#ms" transform="translate(2,430) scale(1.08) rotate(5)"/>
+  <use href="#ms" transform="translate(2,512) scale(0.82) rotate(-4)"/>
+  <use href="#ms" transform="translate(2,582) scale(1.28) rotate(4)"/>
+  <use href="#ms" transform="translate(2,662) scale(0.74) rotate(-7)"/>
+  <use href="#ms" transform="translate(2,734) scale(1.12) rotate(2)"/>
+
+  <!-- drifting spores -->
+  <g fill="#b98fd9">
+    <circle cx="60" cy="120" r="1.2"/>
+    <circle cx="72" cy="330" r="1.1"/>
+    <circle cx="66" cy="520" r="1.2"/>
+    <circle cx="74" cy="690" r="1"/>
+    <circle cx="58" cy="250" r="1"/>
   </g>
 
   <!-- annotations -->
   <g fill="#b98fd9" font-family="monospace">
-    <text x="84" y="560" font-size="8" transform="rotate(-90 84 560)">FIG. V — FUNGI</text>
-    <text x="10" y="734" font-size="7.5">AMANITA R-05</text>
+    <text x="84" y="420" font-size="8" transform="rotate(-90 84 420)">FIG. V — FUNGI</text>
+    <text x="14" y="788" font-size="7.5">AMANITA R-05</text>
   </g>
 </svg>
