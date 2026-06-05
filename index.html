@@ -19,16 +19,17 @@
 
   <!-- foundation -->
   <link rel="stylesheet" href="css/variables.css?v=3">
-  <link rel="stylesheet" href="css/layout.css?v=3">
+  <link rel="stylesheet" href="css/layout.css?v=4">
   <link rel="stylesheet" href="css/sidebars.css?v=3">
 
   <!-- top -->
   <link rel="stylesheet" href="css/0_top/portrait.css?v=5">
   <link rel="stylesheet" href="css/0_top/stamp.css?v=2">
 
-  <!-- middle -->
+  <!-- middle (all page views loaded — this is a single-page site) -->
   <link rel="stylesheet" href="css/1_middle/cards.css?v=3">
-  <link rel="stylesheet" href="css/about.css?v=4">
+  <link rel="stylesheet" href="css/about.css?v=5">
+  <link rel="stylesheet" href="css/nonfiction.css?v=4">
 
   <!-- bottom -->
   <link rel="stylesheet" href="css/2_bottom/socials.css?v=3">
@@ -47,57 +48,58 @@
   data-theme="green"
   data-page="about"
   data-blurb="A few notes on me — and the work."
-  data-portrait-light="images/original_portrait_background.webp"
-  data-scripts="js/easter-eggs.js?v=1,js/moving_bug.js?v=10">
+  data-portrait-light="images/original_portrait_background.webp">
     <main class="page">
 
   <aside class="rail rail--left" aria-hidden="true">
-    <img src="components/about/robot-leg.svg?v=2" alt="">
+    <img id="rail-left" class="rail-img" src="components/about/robot-leg.svg?v=2" alt="">
   </aside>
 
   <section class="center">
 
     <div id="site-header"></div>
 
-    <section class="letters" aria-label="About">
+    <div id="view">
+      <section class="letters" aria-label="About">
 
-      <article class="letter letter--bio">
-        <span class="clip" aria-hidden="true"></span>
-        <h3>Dear reader,</h3>
-        <p>Welcome to my little corner of the internet! I'm thrilled to have you here. This is my space where I share my thoughts and stories.</p>
-        <p>Feel free to explore and enjoy! Try to touch all the little things, most of them move.</p>
-        <p class="sign">— Rose</p>
-      </article>
+        <article class="letter letter--bio">
+          <span class="clip" aria-hidden="true"></span>
+          <h3>Dear reader,</h3>
+          <p>Welcome to my little corner of the internet! I'm thrilled to have you here. This is my space where I share my thoughts and stories.</p>
+          <p>Feel free to explore and enjoy! Try to touch all the little things, most of them move.</p>
+          <p class="sign">— Rose</p>
+        </article>
 
-      <article class="letter letter--work">
-        <span class="clip" aria-hidden="true"></span>
-        <h3>On writing —</h3>
-        <p>I love fiction and I've been an avid reader since I was a little girl, so it was only time for me to start writing</p>
-        <p>I primarily write speculative fiction, exploring themes of identity, technology, and the human condition.</p>
-        <p>My work is either a solarpunk hopeful story or the worse tragedy in space opera ever written! Have a look on the stories tab to see more.</p>
-        <p>I ocasionally write non fiction on my substack, and am trying to get it published to other places too!</p>
-      </article>
+        <article class="letter letter--work">
+          <span class="clip" aria-hidden="true"></span>
+          <h3>On writing —</h3>
+          <p>I love fiction and I've been an avid reader since I was a little girl, so it was only time for me to start writing</p>
+          <p>I primarily write speculative fiction, exploring themes of identity, technology, and the human condition.</p>
+          <p>My work is either a solarpunk hopeful story or the worse tragedy in space opera ever written! Have a look on the stories tab to see more.</p>
+          <p>I ocasionally write non fiction on my substack, and am trying to get it published to other places too!</p>
+        </article>
 
-      <article class="letter letter--ai">
-        <span class="clip" aria-hidden="true"></span>
-        <h3>On AI usage —</h3>
-        <p>I do not use AI in my creative practice, at all. I don't research with AI, i don't plot with AI, i don't write with AI and i don't edit with AI.</p>
-        <p>I cannot say that i do not use AI at because as a software engineer, it is a requirement of my job, but i try to use is the least possible so that i make my manager happy but also keep my braincells hydrated!</p>
-      </article>
+        <article class="letter letter--ai">
+          <span class="clip" aria-hidden="true"></span>
+          <h3>On AI usage —</h3>
+          <p>I do not use AI in my creative practice, at all. I don't research with AI, i don't plot with AI, i don't write with AI and i don't edit with AI.</p>
+          <p>I cannot say that i do not use AI at because as a software engineer, it is a requirement of my job, but i try to use is the least possible so that i make my manager happy but also keep my braincells hydrated!</p>
+        </article>
 
-    </section>
+      </section>
+    </div>
 
     <div id="site-footer"></div>
 
   </section>
 
   <aside class="rail rail--right" aria-hidden="true">
-    <img src="components/about/star-system.svg?v=2" alt="">
+    <img id="rail-right" class="rail-img" src="components/about/star-system.svg?v=2" alt="">
   </aside>
 
 </main>
 
-<script src="js/include.js?v=1"></script>
+<script src="js/app.js?v=1"></script>
 </body>
 
 </html>

@@ -3,4 +3,4 @@
    and the card margin-rule + read-more link use that same green — otherwise
    the page theme ("sepia") would fall back to the red accent from cards.css. */
 
-.body{ --accent:#2f7d45; }
+body[data-page="nonfic"] .body{ --accent:#2f7d45; }

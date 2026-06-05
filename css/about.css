@@ -5,7 +5,7 @@
    a giant robot leg on the left, a star system on the right — both drawn in
    off-white, yellow and brown). Scoped to this page so the stories page's
    green-tab rail keeps its dark-green theme. */
-body[data-theme="green"] .rail{
+body[data-page="about"] .rail{
   background:#607848;
   border-color:#607848;
   outline-color:rgba(244,236,217,.32);
