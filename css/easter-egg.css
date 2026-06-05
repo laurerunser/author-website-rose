@@ -1,0 +1,147 @@
+/* easter-egg.css — a full-bleed blueprint sheet. The orbital-station drawing
+   assembles itself, line by line, as the cursor wanders the page (see
+   js/easter-egg.js). Everything here is the "sheet": the gridded paper, the
+   drafting crosshair, the corner read-outs and the title block. */
+
+:root{
+  --paper:#0a1d33;
+  --ink:#eaf1f8;        /* drawing white */
+  --blue:#5d93d6;       /* annotation blue */
+  --grid:125,166,214;   /* rgb for the faint grid */
+}
+
+*{ box-sizing:border-box; }
+
+html,body{
+  height:100%;
+  margin:0;
+}
+
+body{
+  overflow:hidden;
+  background-color:var(--paper);
+  /* two grids: a fine 32px weave + a bolder 160px division */
+  background-image:
+    linear-gradient(rgba(var(--grid),.05) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--grid),.05) 1px, transparent 1px),
+    linear-gradient(rgba(var(--grid),.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--grid),.08) 1px, transparent 1px);
+  background-size:32px 32px, 32px 32px, 160px 160px, 160px 160px;
+  color:var(--ink);
+  font-family:'Special Elite', ui-monospace, monospace;
+  cursor:crosshair;
+}
+
+/* darken the edges so the sheet reads like it's lit from the middle */
+body::after{
+  content:"";
+  position:fixed; inset:0;
+  pointer-events:none;
+  background:radial-gradient(ellipse at 50% 46%,
+    rgba(0,0,0,0) 52%, rgba(0,0,0,.42) 100%);
+  z-index:4;
+}
+
+/* ---- the drawing ---------------------------------------------------------*/
+.sheet{
+  position:fixed; inset:0;
+  display:flex; align-items:center; justify-content:center;
+  z-index:2;
+  pointer-events:none;
+}
+.sheet svg{
+  width:auto;
+  height:88vh;
+  max-width:94vw;
+  max-height:92vh;
+  display:block;
+  overflow:visible;
+}
+
+/* ---- drafting crosshair (follows the cursor) -----------------------------*/
+.xhair{ position:fixed; inset:0; z-index:3; pointer-events:none; opacity:0; transition:opacity .4s ease; }
+.xhair.live{ opacity:1; }
+.xhair-v,.xhair-h{ position:absolute; background:rgba(var(--grid),.22); }
+.xhair-v{ top:0; bottom:0; width:1px; transform:translateX(-0.5px); }
+.xhair-h{ left:0; right:0; height:1px; transform:translateY(-0.5px); }
+.xhair-dot{
+  position:absolute; width:14px; height:14px; margin:-7px 0 0 -7px;
+  border:1px solid rgba(var(--grid),.5); border-radius:50%;
+}
+
+/* ---- back link (always available) ----------------------------------------*/
+.back{
+  position:fixed; top:18px; left:20px; z-index:6;
+  color:var(--ink); text-decoration:none;
+  font-size:14px; letter-spacing:.04em;
+  padding:6px 10px; border:1px solid transparent;
+  transition:border-color .2s ease, color .2s ease;
+}
+.back:hover,.back:focus-visible{
+  color:#fff; border-color:rgba(var(--grid),.45); outline:none;
+}
+.back .arr{ display:inline-block; margin-right:6px; }
+
+/* ---- "move to assemble" hint ---------------------------------------------*/
+.hint{
+  position:fixed; left:50%; top:18px; transform:translateX(-50%);
+  z-index:6; pointer-events:none;
+  color:var(--blue); font-size:13px; letter-spacing:.12em; text-transform:uppercase;
+  transition:opacity .6s ease;
+}
+.hint.gone{ opacity:0; }
+
+/* ---- assembly read-out (bottom-left) -------------------------------------*/
+.readout{
+  position:fixed; left:20px; bottom:18px; z-index:6; pointer-events:none;
+  font-size:11px; letter-spacing:.14em; color:var(--blue); text-transform:uppercase;
+}
+.readout .row{ display:flex; align-items:center; gap:10px; }
+.readout .bar{
+  width:150px; height:6px; border:1px solid rgba(var(--grid),.4);
+  position:relative; overflow:hidden;
+}
+.readout .bar-fill{
+  position:absolute; left:0; top:0; bottom:0; width:0;
+  background:rgba(var(--grid),.5); transition:width .12s linear;
+}
+.readout .pct{ min-width:3.4em; color:var(--ink); }
+
+/* ---- title block / cartouche (bottom-right) ------------------------------*/
+.cartouche{
+  position:fixed; right:18px; bottom:18px; z-index:6; pointer-events:none;
+  width:clamp(228px,24vw,288px);
+  border:1px solid rgba(234,241,248,.5);
+  background:rgba(8,22,40,.55);
+  color:var(--ink);
+  font-size:10.5px; letter-spacing:.04em;
+  opacity:0; transform:translateY(6px);
+  transition:opacity .9s ease, transform .9s ease;
+}
+.near-done .cartouche{ opacity:1; transform:none; }
+.cartouche .tb-head{
+  padding:6px 9px; border-bottom:1px solid rgba(234,241,248,.4);
+  font-size:9.5px; letter-spacing:.1em; color:var(--blue); text-transform:uppercase;
+}
+.cartouche .tb-title{
+  padding:8px 9px; font-size:13px; letter-spacing:.02em;
+  border-bottom:1px solid rgba(234,241,248,.4);
+}
+.cartouche .tb-grid{ display:flex; }
+.cartouche .tb-cell{ flex:1 1 0; padding:6px 9px; }
+.cartouche .tb-cell + .tb-cell{ border-left:1px solid rgba(234,241,248,.4); }
+.cartouche .tb-cell b{ display:block; color:var(--blue); font-weight:normal; font-size:8.5px; letter-spacing:.1em; }
+
+/* small screens: shrink the drawing + chrome, drop the crosshair */
+@media (max-width:760px), (max-height:560px){
+  .sheet svg{ height:auto; width:92vw; max-height:74vh; }
+  .cartouche{ display:none; }
+  .hint{ font-size:11px; letter-spacing:.08em; top:auto; bottom:54px; }
+}
+
+/* respect reduced-motion: the script renders the finished drawing and the
+   crosshair / hint stay hidden, but everything is still here to look at. */
+@media (prefers-reduced-motion:reduce){
+  .hint{ display:none; }
+  body{ cursor:default; }
+}
