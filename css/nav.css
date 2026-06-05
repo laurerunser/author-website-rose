@@ -1,30 +1,31 @@
-/* nav.css — the two page links that sit inside the figure-8 loop, one in each
-   lobe. The blob loops around them. They live inside #moving-bug (which is
-   pointer-events:none) so they re-enable pointer events themselves. */
+/* nav.css — three page links inside the header nav, with "*" separators
+   between them. The blob weaves between/over them. The links live inside
+   #moving-bug (pointer-events:none) so they re-enable pointer events. */
 
 .loop-link{
   position:absolute;
   top:50%;
   transform:translate(-50%,-50%);
-  z-index:2;                       /* above the looping blob */
+  z-index:2;                       /* above the weaving blob */
   pointer-events:auto;
   font-family:'Special Elite', monospace;
-  font-size:clamp(12px,1.15vw,15px);
-  letter-spacing:.02em;
+  font-size:clamp(11px,1.02vw,13.5px);
+  letter-spacing:.01em;
   white-space:nowrap;
   color:var(--muted);
   text-decoration:none;
-  padding:2px 2px;
+  cursor:pointer;
   transition:color .2s ease;
 }
 
-/* typewriter brackets so the links read as pressable: [ my stories ] */
+/* typewriter brackets so they read as pressable: [ stories ] */
 .loop-link::before{content:"[\00a0";}
 .loop-link::after{content:"\00a0]";}
 
-/* one link near the centre of each lobe of the ∞ */
-.loop-link--stories{left:22%;}
-.loop-link--about{left:78%;}
+/* anchored to match the blob's weave points (see moving_bug.js ANCHORS) */
+.loop-link--about{left:16%;}
+.loop-link--stories{left:50%;}
+.loop-link--nonfic{left:84%;}
 
 .loop-link:hover,
 .loop-link:focus-visible{
@@ -39,3 +40,18 @@
   border-bottom:1.5px solid currentColor;
 }
 .loop-link.is-current:hover{text-decoration:none;}
+
+/* the "*" separators between links (blob may glide over these) */
+.loop-sep{
+  position:absolute;
+  top:50%;
+  transform:translate(-50%,-50%);
+  z-index:2;
+  pointer-events:none;
+  font-family:'Special Elite', monospace;
+  font-size:15px;
+  color:var(--faint);
+  line-height:1;
+}
+.loop-sep--1{left:33%;}
+.loop-sep--2{left:67%;}

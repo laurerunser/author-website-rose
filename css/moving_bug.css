@@ -4,7 +4,7 @@
 
 .moving-bug{
   flex:2 1 auto;
-  min-width:clamp(200px,22vw,300px); /* room for the ∞ + both links */
+  min-width:clamp(280px,30vw,440px); /* room for 3 links + 2 separators + the blob */
   align-self:stretch;
   position:relative;
   overflow:visible;

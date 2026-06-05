@@ -1,11 +1,10 @@
-/* moving_bug — a little blob that loops a figure-8 in the header, around the
-   two nav links. Its colour follows the active theme (body[data-theme], set
-   per-tab on the stories page, or fixed on the about page). The bounce/wobble
-   is pure CSS; this file only handles the colour + the figure-8 path. */
+/* moving_bug — a little blob that weaves between the header nav links. Its
+   colour follows the active theme (body[data-theme]); the bounce is pure CSS.
+   The blob rides over the "*" separators but stays above/below the bracketed
+   links, never inside them. */
 (function () {
   "use strict";
 
-  // a blob of liquid, drawn in a given colour
   function blob(fill, stroke) {
     return '<svg viewBox="0 0 40 40" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">' +
       '<path d="M20 5 C 30 4 36 13 33 21 C 37 30 27 37 20 34 C 12 37 4 30 7 21 C 4 13 10 5 20 5 Z" ' +
@@ -15,13 +14,13 @@
       '</svg>';
   }
 
-  // one blob per theme (colours read on the cream header background)
   var ICONS = {
-    blue:   blob('rgba(27,58,94,.42)',   '#1b3a5e'),
+    blue:   blob('rgba(93,147,214,.42)', '#5d93d6'),   // light blue
     green:  blob('rgba(47,125,69,.42)',  '#2f7d45'),
     yellow: blob('rgba(169,121,26,.42)', '#a9791a'),
     red:    blob('rgba(196,59,39,.42)',  '#c43b27'),
-    purple: blob('rgba(122,79,163,.42)', '#7a4fa3')
+    purple: blob('rgba(122,79,163,.42)', '#7a4fa3'),
+    sepia:  blob('rgba(107,74,47,.42)',  '#6b4a2f')    // brown (non-fiction)
   };
 
   var host = document.getElementById("moving-bug");
@@ -35,48 +34,46 @@
   var reduceMotion = window.matchMedia &&
     window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  function themeNow() {
-    return document.body.dataset.theme || "blue";
-  }
-
+  function themeNow() { return document.body.dataset.theme || "blue"; }
   function setIcon(theme) {
     if (bug.dataset.theme === theme) return;
     bug.innerHTML = ICONS[theme] || ICONS.blue;
     bug.dataset.theme = theme;
   }
 
-  // geometry of the figure-8 (recomputed on resize): the blob's centre traces
-  // a wide, flat lemniscate that loops around the two nav links
-  var geo = { A: 8, cy: 0, H: 6 };
+  // the three nav links sit at these x-fractions (match nav.css); the blob
+  // weaves: above link 1, below link 2, above link 3, crossing the middle over
+  // the "*" gaps between them.
+  var ANCHORS = [0.16, 0.50, 0.84];
+  var geo = { W: 0, H: 0, A: 8, bw: 40, bh: 40 };
   function computeGeo() {
-    var bw = bug.offsetWidth || 40;
-    var bh = bug.offsetHeight || 40;
-    geo.A = Math.max(8, (host.clientWidth - bw) / 2);
-    geo.cy = Math.max(0, (host.clientHeight - bh) / 2);
-    geo.H = Math.max(6, Math.min(geo.cy, geo.A * 0.3));
+    geo.bw = bug.offsetWidth || 40;
+    geo.bh = bug.offsetHeight || 40;
+    geo.W = host.clientWidth;
+    geo.H = host.clientHeight;
+    geo.A = Math.max(20, Math.min(geo.H / 2 - geo.bh / 2 - 2, 60));
   }
 
   computeGeo();
   setIcon(themeNow());
 
-  // recolour the blob whenever the active theme (body[data-theme]) changes
   if (window.MutationObserver) {
     var obs = new MutationObserver(function () { setIcon(themeNow()); });
     obs.observe(document.body, { attributes: true, attributeFilter: ["data-theme"] });
   }
 
   window.addEventListener("resize", computeGeo);
-  bug.style.transition = "none"; // position is driven frame-by-frame
+  bug.style.transition = "none";
 
   if (reduceMotion) {
-    bug.style.transform = "translate(" + geo.A.toFixed(1) + "px," + geo.cy.toFixed(1) + "px)";
+    bug.style.transform = "translate(" + (ANCHORS[0] * geo.W - geo.bw / 2).toFixed(1) +
+      "px," + (geo.H / 2 - geo.bh / 2).toFixed(1) + "px)";
     return;
   }
 
-  // glide continuously along the figure-8 — no pauses
   var t = 0;
   var lastTs = null;
-  var PERIOD = 18; // seconds for one full ∞ loop
+  var PERIOD = 16; // seconds to weave across and back
   function frame(ts) {
     if (lastTs === null) lastTs = ts;
     var dt = Math.min(0.05, (ts - lastTs) / 1000);
@@ -84,10 +81,12 @@
     t += (2 * Math.PI / PERIOD) * dt;
     if (t > 2 * Math.PI) t -= 2 * Math.PI;
 
-    bug.style.transform =
-      "translate(" + (geo.A * (1 + Math.sin(t))).toFixed(1) + "px," +
-      (geo.cy + geo.H * Math.sin(2 * t)).toFixed(1) + "px)";
+    var u = (1 - Math.cos(t)) / 2;                              // ping-pong 0..1..0
+    var cx = (ANCHORS[0] + (ANCHORS[2] - ANCHORS[0]) * u) * geo.W;
+    var cy = geo.H / 2 - geo.A * Math.cos(2 * Math.PI * u);     // weave up/down
 
+    bug.style.transform =
+      "translate(" + (cx - geo.bw / 2).toFixed(1) + "px," + (cy - geo.bh / 2).toFixed(1) + "px)";
     requestAnimationFrame(frame);
   }
   requestAnimationFrame(frame);

@@ -13,6 +13,9 @@
   --rail-yellow:#33280c;  --num-yellow:#a9791a;
   --rail-red:#3a140e;     --num-red:#c43b27;
   --rail-purple:#241638;  --num-purple:#7a4fa3;
+
+  /* non-fiction page: brown (hair) accent + sepia rail backdrop */
+  --brown:#6b4a2f;        --rail-sepia:#2b1f12;
 }
 
 *{
