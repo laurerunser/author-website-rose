@@ -1,7 +1,7 @@
-/* nonfiction.js — renders the non-fiction tabs/cards. All tab numbers are
-   green, alternating a dark and a light green; the active card's margin-rule
-   + read-more link follow the same shade. Unlike stories.js it does NOT touch
-   the rails, portrait, or body[data-theme] — those stay fixed here. */
+/* nonfiction.js — renders the non-fiction tabs/cards. Every tab number uses
+   the dark dress green, and the card margin-rule + read-more link use that
+   same green (set in nonfiction.css). Unlike stories.js it does NOT touch the
+   rails, portrait, or body[data-theme] — those stay fixed here. */
 const NONFIC = [
   {
     tab:"01",
@@ -47,7 +47,6 @@ const NONFIC = [
 
 const tabsEl = document.getElementById("tabs");
 const storyEl = document.getElementById("story");
-const bodyEl = document.getElementById("body");
 
 let active = 0;
 
@@ -57,10 +56,9 @@ function renderTabs() {
   NONFIC.forEach((s, i) => {
     const b = document.createElement("button");
 
-    // all numbers green — alternate a dark and a light green
+    // all numbers use the dark dress green
     b.className =
-      "tab" +
-      (i % 2 === 0 ? " tab--green-dark" : " tab--green-light") +
+      "tab tab--green" +
       (i === active ? " is-active" : "");
 
     b.setAttribute("role", "tab");
@@ -91,9 +89,6 @@ function renderStory() {
 function render() {
   renderTabs();
   renderStory();
-  // the card margin-rule + read-more follow the active tab's green shade
-  bodyEl.classList.toggle("acc-green-dark", active % 2 === 0);
-  bodyEl.classList.toggle("acc-green-light", active % 2 !== 0);
 }
 
 render();

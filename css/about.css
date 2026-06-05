@@ -6,8 +6,8 @@
    off-white, yellow and brown). Scoped to this page so the stories page's
    green-tab rail keeps its dark-green theme. */
 body[data-theme="green"] .rail{
-  background:#3c7d50;
-  border-color:#3c7d50;
+  background:#607848;
+  border-color:#607848;
   outline-color:rgba(244,236,217,.32);
 }
 

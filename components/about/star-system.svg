@@ -1,6 +1,6 @@
 <svg viewBox="0 0 90 820" xmlns="http://www.w3.org/2000/svg">
   <!-- lighter-green backdrop -->
-  <rect width="90" height="820" fill="#3c7d50"/>
+  <rect width="90" height="820" fill="#607848"/>
 
   <!-- scattered stars -->
   <g fill="#f4ecd9">
