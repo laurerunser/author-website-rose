@@ -6,7 +6,7 @@
   }
 
   .portrait{
-  width:clamp(120px,11vw,170px);
+  width:clamp(130px,12vw,180px);
   aspect-ratio:1;
   border-radius:50%;
   border:3px double var(--ink);
