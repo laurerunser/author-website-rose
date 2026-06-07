@@ -1,6 +1,6 @@
-/* nav.css — three page links inside the header nav, with "*" separators
-   between them. The blob weaves between/over them. The links live inside
-   #moving-bug (pointer-events:none) so they re-enable pointer events. */
+/* nav.css — the page link(s) inside the header nav. The blob weaves over
+   them. The links live inside #moving-bug (pointer-events:none) so they
+   re-enable pointer events. */
 
 .loop-link{
   position:absolute;
@@ -22,10 +22,8 @@
 .loop-link::before{content:"[\00a0";}
 .loop-link::after{content:"\00a0]";}
 
-/* anchored to match the blob's weave points (see easter-eggs/moving_bug/moving_bug.js ANCHORS) */
-.loop-link--about{left:16%;}
-.loop-link--stories{left:50%;}
-.loop-link--nonfic{left:84%;}
+/* centred in the nav; the blob still weaves across and over it */
+.loop-link--about{left:50%;}
 
 .loop-link:hover,
 .loop-link:focus-visible{
@@ -40,18 +38,3 @@
   border-bottom:1.5px solid currentColor;
 }
 .loop-link.is-current:hover{text-decoration:none;}
-
-/* the "*" separators between links (blob may glide over these) */
-.loop-sep{
-  position:absolute;
-  top:50%;
-  transform:translate(-50%,-50%);
-  z-index:2;
-  pointer-events:none;
-  font-family:'Special Elite', monospace;
-  font-size:15px;
-  color:var(--faint);
-  line-height:1;
-}
-.loop-sep--1{left:33%;}
-.loop-sep--2{left:67%;}
