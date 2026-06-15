@@ -8,3 +8,7 @@
   letter-spacing:.04em;
   text-align:right;
 }
+.site-credit a{
+  color:inherit;
+  text-decoration:underline;
+}
