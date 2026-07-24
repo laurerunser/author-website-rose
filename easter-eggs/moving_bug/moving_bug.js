@@ -69,10 +69,12 @@
     window.location.href = bug.dataset.egg + sep + "from=" + encodeURIComponent(from);
   });
 
-  // the three nav links sit at these x-fractions (match nav.css); the blob
-  // weaves: above link 1, below link 2, above link 3, crossing the middle over
-  // the "*" gaps between them.
-  var ANCHORS = [0.16, 0.50, 0.84];
+  // the two nav links sit at these x-fractions (match nav.css); the blob
+  // traces a figure-8 (a lemniscate of Gerono) between them, looping around
+  // each link in turn and crossing back through the middle.
+  var ANCHORS = [0.38, 0.62];
+  var CENTER = (ANCHORS[0] + ANCHORS[1]) / 2;
+  var LOBE = (ANCHORS[1] - ANCHORS[0]) / 2 * 1.35; // overshoot past each link so its loop encloses it
   var geo = { W: 0, H: 0, A: 8, bw: 40, bh: 40 };
   function computeGeo() {
     geo.bw = bug.offsetWidth || 40;
@@ -102,7 +104,7 @@
 
   var t = 0;
   var lastTs = null;
-  var PERIOD = 16; // seconds to weave across and back
+  var PERIOD = 14; // seconds per full figure-8 loop
   function frame(ts) {
     if (lastTs === null) lastTs = ts;
     var dt = Math.min(0.05, (ts - lastTs) / 1000);
@@ -110,9 +112,11 @@
     t += (2 * Math.PI / PERIOD) * dt;
     if (t > 2 * Math.PI) t -= 2 * Math.PI;
 
-    var u = (1 - Math.cos(t)) / 2;                              // ping-pong 0..1..0
-    var cx = (ANCHORS[0] + (ANCHORS[2] - ANCHORS[0]) * u) * geo.W;
-    var cy = geo.H / 2 - geo.A * Math.cos(2 * Math.PI * u);     // weave up/down
+    // lemniscate of Gerono: x = sin(t), y = sin(t)cos(t) — a horizontal
+    // infinity sign, its two lobes centred on the two links, crossing
+    // through the middle at t = 0 and t = π.
+    var cx = (CENTER + LOBE * Math.sin(t)) * geo.W;
+    var cy = geo.H / 2 + geo.A * Math.sin(t) * Math.cos(t);
 
     bug.style.transform =
       "translate(" + (cx - geo.bw / 2).toFixed(1) + "px," + (cy - geo.bh / 2).toFixed(1) + "px)";
