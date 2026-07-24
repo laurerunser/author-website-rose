@@ -149,8 +149,8 @@
   window.addEventListener("hashchange", function () { var p = parseHash(); navigate(p.route, p.tab); });
 
   Promise.all([
-    inject("site-header", "header.html"),
-    inject("site-footer", "footer.html")
+    inject("site-header", "header.html?v=2"),
+    inject("site-footer", "footer.html?v=2")
   ]).then(function () {
     PERSIST.reduce(function (p, src) {     // start the blob, once and for all (in order)
       return p.then(function () { return loadScript(src); });
