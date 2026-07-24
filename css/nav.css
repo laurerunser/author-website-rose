@@ -22,8 +22,9 @@
 .loop-link::before{content:"[\00a0";}
 .loop-link::after{content:"\00a0]";}
 
-/* centred in the nav; the blob still weaves across and over it */
-.loop-link--about{left:50%;}
+/* anchored to match the blob's weave points (see easter-eggs/moving_bug/moving_bug.js ANCHORS) */
+.loop-link--about{left:16%;}
+.loop-link--stories{left:84%;}
 
 .loop-link:hover,
 .loop-link:focus-visible{

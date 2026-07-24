@@ -15,7 +15,7 @@
   var ROUTES = {
     about: { file: "index.html", page: "about" },
     stories: {
-      file: "stories.html", page: "stories", script: "js/stories.js?v=9",
+      file: "stories.html", page: "stories", script: "js/stories.js?v=10",
       init: function (tab) { if (window.StoriesPage) window.StoriesPage.init(tab); }
     },
     nonfic: {
