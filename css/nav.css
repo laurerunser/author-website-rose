@@ -22,9 +22,11 @@
 .loop-link::before{content:"[\00a0";}
 .loop-link::after{content:"\00a0]";}
 
-/* anchored to match the blob's figure-8 lobes (see easter-eggs/moving_bug/moving_bug.js ANCHORS) */
-.loop-link--about{left:38%;}
-.loop-link--stories{left:62%;}
+/* fixed px offset from centre (not a %) so the gap stays constant regardless
+   of container width — the blob's figure-8 (moving_bug.js) measures these
+   live, so it always has room to loop clear of the link text */
+.loop-link--about{left:calc(50% - 120px);}
+.loop-link--stories{left:calc(50% + 120px);}
 
 .loop-link:hover,
 .loop-link:focus-visible{

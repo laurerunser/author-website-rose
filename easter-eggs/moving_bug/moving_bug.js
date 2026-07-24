@@ -69,19 +69,68 @@
     window.location.href = bug.dataset.egg + sep + "from=" + encodeURIComponent(from);
   });
 
-  // the two nav links sit at these x-fractions (match nav.css); the blob
-  // traces a figure-8 (a lemniscate of Gerono) between them, looping around
-  // each link in turn and crossing back through the middle.
-  var ANCHORS = [0.38, 0.62];
-  var CENTER = (ANCHORS[0] + ANCHORS[1]) / 2;
-  var LOBE = (ANCHORS[1] - ANCHORS[0]) / 2 * 1.35; // overshoot past each link so its loop encloses it
-  var geo = { W: 0, H: 0, A: 8, bw: 40, bh: 40 };
+  // the blob traces a figure-8 built from two circles, one looping around
+  // each nav link and meeting at the centre — each circle is centred *on*
+  // its link (radius = the link's own offset from centre), so the loop is
+  // tallest directly over the link instead of thinning out near it like a
+  // plain lemniscate would. computeGeo() measures the links' actual boxes
+  // each time and solves for a radius that clears all four edges
+  // (left/right/top/bottom) with a margin, so it keeps working if font
+  // size or container width changes.
+  var linkAbout = host.querySelector(".loop-link--about");
+  var linkStories = host.querySelector(".loop-link--stories");
+  var MARGIN_X = 6; // px the loop clears past a link's left/right edge
+  var MARGIN_Y = 6; // px the loop clears above/below a link's box
+  var geo = { W: 0, H: 0, A: 34, bw: 40, bh: 40, D: 120, aboutOffset: 95 };
+
+  function linkBox(el, hostRect) {
+    if (!el) return null;
+    var r = el.getBoundingClientRect();
+    return {
+      offset: Math.abs((r.left + r.right) / 2 - (hostRect.left + hostRect.width / 2)),
+      halfW: r.width / 2,
+      halfH: r.height / 2
+    };
+  }
+
   function computeGeo() {
     geo.bw = bug.offsetWidth || 40;
     geo.bh = bug.offsetHeight || 40;
-    geo.W = host.clientWidth;
-    geo.H = host.clientHeight;
-    geo.A = Math.max(20, Math.min(geo.H / 2 - geo.bh / 2 - 2, 60));
+    var bugVisR = geo.bw * 0.475; // the blob's own visual radius inside its box
+    var hostRect = host.getBoundingClientRect();
+    geo.W = hostRect.width;
+    geo.H = hostRect.height;
+
+    var aboutBox = linkBox(linkAbout, hostRect);
+    var boxes = [aboutBox, linkBox(linkStories, hostRect)].filter(Boolean);
+    geo.aboutOffset = aboutBox ? aboutBox.offset : 95;
+
+    if (!boxes.length) {
+      geo.D = Math.max(40, geo.W / 2 - geo.bw / 2 - 5);
+      geo.A = Math.max(24, Math.min(geo.H / 2 - geo.bh / 2 - 2, 70));
+      return;
+    }
+
+    boxes.forEach(function (b) {
+      b.unsafeHalfW = b.halfW + bugVisR + MARGIN_X;
+      b.unsafeHalfH = b.halfH + bugVisR + MARGIN_Y;
+    });
+
+    // each circle's radius = the average link offset, so both lobes stay
+    // symmetric and the loop's tallest point sits right over each link
+    var sum = 0;
+    boxes.forEach(function (b) { sum += b.offset; });
+    geo.D = Math.min(sum / boxes.length, Math.max(40, geo.W / 2 - geo.bw / 2 - 5));
+
+    // amplitude needed so cy = D·(1-cosφ) → y = A·sinφ clears each link's
+    // box at its inner/outer edges (the loop's weakest points there)
+    var neededA = geo.bh / 2 + 10;
+    boxes.forEach(function (b) {
+      var ratio = Math.min(0.92, b.unsafeHalfW / geo.D);
+      var s = Math.sqrt(Math.max(0, 1 - ratio * ratio));
+      if (s > 0.02) neededA = Math.max(neededA, b.unsafeHalfH / s);
+    });
+    geo.A = Math.min(neededA, Math.max(24, geo.H / 2 - geo.bh / 2 - 2));
   }
 
   computeGeo();
@@ -97,26 +146,33 @@
   bug.style.transition = "none";
 
   if (reduceMotion) {
-    bug.style.transform = "translate(" + (ANCHORS[0] * geo.W - geo.bw / 2).toFixed(1) +
+    bug.style.transform = "translate(" + (geo.W / 2 - geo.aboutOffset - geo.bw / 2).toFixed(1) +
       "px," + (geo.H / 2 - geo.bh / 2).toFixed(1) + "px)";
     return;
   }
 
   var t = 0;
   var lastTs = null;
-  var PERIOD = 14; // seconds per full figure-8 loop
+  var PERIOD = 14; // seconds per full figure-8 loop (both circles)
   function frame(ts) {
     if (lastTs === null) lastTs = ts;
     var dt = Math.min(0.05, (ts - lastTs) / 1000);
     lastTs = ts;
     t += (2 * Math.PI / PERIOD) * dt;
-    if (t > 2 * Math.PI) t -= 2 * Math.PI;
+    if (t > 4 * Math.PI) t -= 4 * Math.PI;
 
-    // lemniscate of Gerono: x = sin(t), y = sin(t)cos(t) — a horizontal
-    // infinity sign, its two lobes centred on the two links, crossing
-    // through the middle at t = 0 and t = π.
-    var cx = (CENTER + LOBE * Math.sin(t)) * geo.W;
-    var cy = geo.H / 2 + geo.A * Math.sin(t) * Math.cos(t);
+    // right circle (phase 0..2π): centred on the "stories" link, radius D,
+    // starts/ends at the crossing point (0,0); left circle is its mirror.
+    // x = D(1-cosφ) → 0 at the crossing, 2D at the far side, D (its full
+    // radius) directly over the link — so height there is D, not ~0 like
+    // a lemniscate's pinched waist. y = A·sinφ is independent of x, so
+    // amplitude can be tuned for clearance without fighting the reach.
+    var onLeft = t >= 2 * Math.PI;
+    var phase = onLeft ? t - 2 * Math.PI : t;
+    var cx = geo.D * (1 - Math.cos(phase));
+    var cy = geo.H / 2 + geo.A * Math.sin(phase);
+    if (onLeft) cx = -cx;
+    cx += geo.W / 2;
 
     bug.style.transform =
       "translate(" + (cx - geo.bw / 2).toFixed(1) + "px," + (cy - geo.bh / 2).toFixed(1) + "px)";

@@ -54,11 +54,11 @@
 
     .portrait{width:clamp(132px,38vw,168px);}
 
-    /* the moving-bug nav gets its own full-width band so the blob has room to
-       weave and the absolutely-positioned links (at 16/50/84%) sit cleanly */
+    /* the moving-bug nav gets its own full-width band, tall enough for the
+       blob's figure-8 loops to clear the two links above and below */
     .moving-bug{
       width:100%; min-width:0; align-self:stretch;
-      height:52px; margin-top:2px;
+      height:104px; margin-top:2px;
     }
 
     /* --- stories: numbered tab chips --------------------------------------
